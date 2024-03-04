@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from './hooks/redux';
+import { fetchNews } from './store/reducers/ActionCreators';
 
 function App() {
+  const dispatch = useAppDispatch()
+  const {news, isLoading, error} = useAppSelector(state => state.newsReducer)
+
+  useEffect(() => {
+    dispatch(fetchNews())
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>sdfsdfsdfsdf</p>
       </header>
+      {isLoading && <h1>Идет загрузка...</h1>}
+      {error && <h1>{error}</h1>}
+      {JSON.stringify(news, null, 2)}
     </div>
   );
 }
