@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { fetchNews } from './store/reducers/ActionCreators';
+import { Header } from './components/header/Header';
+import { Main } from './pages/Main';
+import { Footer } from './components/Footer';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -12,12 +15,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>sdfsdfsdfsdf</p>
-      </header>
-      {isLoading && <h1>Идет загрузка...</h1>}
-      {error && <h1>{error}</h1>}
-      {JSON.stringify(news, null, 2)}
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
