@@ -65,3 +65,36 @@
       transform: scale(1.2);
     }
 }
+
+@media (max-width: 1200px) { 
+  .link_container { 
+    width: 100%;
+  }
+  .categories_container {
+    width: 40%;
+  }
+  .section_container {
+    width: 25%;
+  }
+  .contacts_container {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) { 
+  .categories_container {
+    display: none;
+  }
+  .socialnetwork_container {
+    margin-top: 10px;
+  }
+  .contacts_container {
+    width: 50%;
+  }
+  .section_container {
+    width: 50%;
+  }
+  .link_container { 
+    width: 100%;
+  }
+}
