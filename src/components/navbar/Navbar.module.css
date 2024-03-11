@@ -1,0 +1,79 @@
+.main_menu {
+    display: flex;
+    justify-content: space-around;
+}
+.button_main_menu {
+    color: #3e3e3e;
+    background-color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.uber_menu {
+    display: flex;
+    width: 1150px;
+    height: 700px;
+    background-color: white;
+    z-index: 999;
+    margin-top: 30px;
+    position: relative;
+
+    border: 2px solid green;
+}
+.middle_menu {
+    display: flex;
+    flex-direction: column;
+    .linkToEquipment:hover ~ .dropdown-content { display: flex;}
+    .dropdown-content:hover { display: flex; }
+    .linkToEquipment:hover ~ .dropdown-content .secondary-container-1 { display: flex; }
+    .dropdown-content:hover .secondary-container-1:hover { display: flex; }
+    
+    .linkToAuto:hover ~ .dropdown-content { display: flex;}
+    .dropdown-content:hover { display: flex; }
+    .linkToAuto:hover ~ .dropdown-content .secondary-container-2 { display: flex; }
+    .dropdown-content:hover .secondary-container-2:hover { display: flex; }
+}
+.link_container {
+    height: 100px;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid gray;
+  
+    a {
+      font-size: 18px;
+      text-decoration: none;
+    }
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 165px;
+    top: 0;
+    width: 84%;
+    height: 99.5%;
+}
+.secondary-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 98%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    div {
+      margin: 0 auto;
+      width: 500px;
+    }
+
+    a {
+      font-size: 16px;
+      text-decoration: none;
+    }
+}
+

@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { fetchNews } from './store/reducers/ActionCreators';
 import { Header } from './components/header/Header';
-import { Main } from './pages/Main';
-import { Footer } from './components/Footer';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
       <Footer />
     </div>
   );
