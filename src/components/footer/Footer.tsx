@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
 import s from './Footer.module.css'
+import vk from "../../image/vk.png"
+import instagram from "../../image/instagram.png"
+import telegram from "../../image/telegram.png"
+import youtobe from "../../image/youtube.png"
 
 type Props = {
     
@@ -35,10 +39,10 @@ export const Footer: React.FC<Props> = () => {
             <p>8-863-526-07-82</p>
             <p>SALES@AVEM.RU</p>
             <div className={s.socialnetwork_container}>
-                <a href="#" target="_blank"><img src="http://localhost/wordpress/wp-content/uploads/2022/11/free-icon-vkontakte-4494517.png" alt="" /></a>
-                <a href="https://www.youtube.com/user/mariamagomedova61" target="_blank"><img src="http://localhost/wordpress/wp-content/uploads/2022/11/free-icon-youtube-4494485.png" alt="" /></a>
-                <a href="#" target="_blank"><img src="http://localhost/wordpress/wp-content/uploads/2022/11/free-icon-telegram-2111646.png" alt="" /></a>
-                <a href="#" target="_blank"><img src="http://localhost/wordpress/wp-content/uploads/2022/11/free-icon-instagram-4494488.png" alt="" /></a>
+                <a href="#" target="_blank"><img src={vk} alt="" /></a>
+                <a href="https://www.youtube.com/user/mariamagomedova61" target="_blank"><img src={youtobe} alt="" /></a>
+                <a href="#" target="_blank"><img src={telegram} alt="" /></a>
+                <a href="#" target="_blank"><img src={instagram} alt="" /></a>
             </div>
           </div>
         </div> 

@@ -1,3 +1,6 @@
+import { AboutCompany } from "../components/AboutCompany/AboutCompany"
+import { ProductLinks } from "../components/ProductsLinks/ProductLinks"
+
 type Props = {
     
 }
@@ -5,8 +8,9 @@ type Props = {
 export const Main: React.FC<Props> = () => {
   
     return (
-      <header>
-          sdfdsf
-      </header>
+      <main>
+        {/* <ProductLinks /> */}
+        <AboutCompany />
+      </main>
     )
 }
