@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { fetchNews } from './store/reducers/ActionCreators';
-import { Header } from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
+import { Header } from './components/header/Header';
+import { Footer } from './components/footer/Footer';
 import { Main } from './pages/Main';
 
 function App() {

@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Header.module.css'
 import { Link } from 'react-router-dom'
 import logo from '../../image/logo.ico'
-import { Navbar } from '../Navbar/Navbar'
+import { Navbar } from '../navbar/Navbar'
 
 type Props = {
     

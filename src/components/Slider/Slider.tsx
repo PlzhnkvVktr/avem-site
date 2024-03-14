@@ -6,27 +6,24 @@ type Props = {
 }
 
 export const Carousel = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [trigger, setTrigger] = useState(false)
     const [slides, setSlides] = useState([
         "https://www.rosmebel-nt.ru/images/2018/02/07/vakansii.jpg", 
         "https://kh174.ru/images/obsluzhivanie%20sistemy%20ventilyatsii.jpg",
         "https://sgm.by/slider/build/1.jpg"
-    ]);
-    let interval: any = null
+    ])
 
-
-    useEffect(() => {
-        console.log("ttt")
-        interval = setInterval(nextSlide, 2000)
-        return () => clearInterval(interval);
+    useEffect(() => { 
+      const timeout = setTimeout(nextSlide, trigger === false ? 2000 : 10000)
+      setTrigger(false)
+      return () => clearTimeout(timeout); 
     }, [currentSlide]);
 
     const nextSlide = () => {
-        if (currentSlide === slides.length - 1) {
-          setCurrentSlide(() => 0);
-        } else {
-          setCurrentSlide((value) => value + 1);
-        }
+        setCurrentSlide((value) => {
+          return value === slides.length - 1 ? 0 : value + 1
+        });
     }
 
     const prevSlide = () => {
@@ -39,8 +36,7 @@ export const Carousel = () => {
 
     const nextSlideButtonAction = () => {
         nextSlide()
-        clearInterval(interval)
-        setTimeout(() => nextSlide(), 10000)
+        setTrigger(true)
     }
   
     return (
