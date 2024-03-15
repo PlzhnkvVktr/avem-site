@@ -21,17 +21,20 @@ export const Carousel = () => {
     }, [currentSlide]);
 
     const nextSlide = () => {
-        setCurrentSlide((value) => {
-          return value === slides.length - 1 ? 0 : value + 1
-        });
+      setCurrentSlide((value) => {
+        return value === slides.length - 1 ? 0 : value + 1
+      });
     }
 
     const prevSlide = () => {
-        if (currentSlide === 0) {
-          setCurrentSlide(() => slides.length - 1);
-        } else {
-          setCurrentSlide((value) => value - 1);
-        }
+      setCurrentSlide((value) => {
+        return value === 0 ? slides.length - 1 : value - 1
+      })
+    }
+    
+    const prevSlideButtonAction = () => {
+      prevSlide()
+      setTrigger(true)
     }
 
     const nextSlideButtonAction = () => {
@@ -40,12 +43,10 @@ export const Carousel = () => {
     }
   
     return (
-      <div style={{ width: '100%', margin: 'auto', display: 'flex', justifyContent: 'center' }}>
+      <div className={s.carousel}>
+        <button className={s.carousel_button_prev} onClick={prevSlideButtonAction}>&lt;</button>
         <img src={slides[currentSlide]} alt={slides[currentSlide]} style={{ width: '80%', margin: 'auto' }} />
-        <button onClick={prevSlide}>Prev</button>
-        <button onClick={() => {
-            nextSlideButtonAction()
-        }}>Next</button>
+        <button className={s.carousel_button_next} onClick={nextSlideButtonAction}>&gt;</button>
       </div>
     );
   };
