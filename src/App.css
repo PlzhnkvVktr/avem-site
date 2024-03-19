@@ -38,4 +38,13 @@ footer {
     color:  #A1A1A1;
   }
 }
-
+@media (max-width: 1400px) { 
+  header {
+    width: 90%;
+  }
+}
+@media (max-width: 1200px) { 
+  header {
+    width: 100%;
+  }
+}

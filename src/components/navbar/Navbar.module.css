@@ -9,6 +9,9 @@
     font-size: 16px;
     border: none;
 }
+.additional_links {
+    display: none;
+}
 .uber_menu {
     display: flex;
     width: 1150px;
@@ -77,3 +80,11 @@
     }
 }
 
+@media (max-width: 1450px) { 
+    .additional_links {
+        display: flex;
+    }
+    .minor_links {
+        display: none;
+    }
+}
