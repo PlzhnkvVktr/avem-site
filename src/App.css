@@ -18,11 +18,14 @@ header {
   height: 200px;
   margin: 0 auto;
 }
+
 nav {
   display: flex;
   flex-direction: column;
   margin: 10px auto 0;
 }
+
+
 footer {
   height: 360px;
   min-height: calc(100vh - 360px - 200px);
