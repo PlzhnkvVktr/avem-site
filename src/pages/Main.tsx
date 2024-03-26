@@ -6,13 +6,14 @@ type Props = {
     
 }
 
-export const Main: React.FC<Props> = () => {
+export const MainPage: React.FC<Props> = () => {
   
     return (
       <main>
-        {/* <ProductLinks /> */}
-        {/* <AboutCompany /> */}
-        <Carousel />
+        <ProductLinks />
+        <AboutCompany />
+        {/* <Carousel /> */}
+        {/* <News /> */}
       </main>
     )
 }

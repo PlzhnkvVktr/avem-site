@@ -3,7 +3,7 @@ import s from './AboutCompany.module.css'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { fetchNews } from '../../store/reducers/ActionCreators'
-import { NewsItem } from '../NewsItem/NewsItem'
+import { NewsFeedItem } from '../NewsFeedItem/NewsFeedItem'
 import { Spinner } from '../common/Spinner/Spinner'
 
 type Props = {
@@ -36,13 +36,13 @@ export const AboutCompany: React.FC<Props> = () => {
           <h2>НОВОСТИ</h2>
            {isLoading && <Spinner />}
            {newsList.map(item =>
-              <NewsItem 
+              <NewsFeedItem 
                 key={item.id} 
                 news={item}
               />
             )}
             
-            <Link to={'/category/news'}>Читать все новости</Link>
+            <Link to={'/news'}>Читать все новости</Link>
         </div>
         <img src="https://keromag.ru/upload/iblock/e20/5ywwm4fvdw2n9d4mf8fu6xa9waci1z2h/43.jpg" alt=""  />
       </div>

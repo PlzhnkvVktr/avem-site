@@ -1,4 +1,4 @@
-
+import {NewsPage} from "../pages/News/NewsPage";
 
 interface RoutesType {
     path: string,
@@ -6,6 +6,6 @@ interface RoutesType {
 }
 
 export const routes: Array<RoutesType> = [
-    // {path: '/about', element: <About />},
+    // {path: '/news', element: <NewsPage />},
     // {path: '/products', element: <Main />},
 ]
