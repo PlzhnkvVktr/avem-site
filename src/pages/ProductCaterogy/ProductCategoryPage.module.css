@@ -1,0 +1,16 @@
+.news_item_container {
+    width: 70%;
+    margin: 0 auto;
+    
+    
+}
+.news {
+    margin-bottom: 30px;
+    h2 {
+        width: 70%;
+        text-align: start;
+    }
+    p {
+        text-indent: 25px;
+    }
+}
