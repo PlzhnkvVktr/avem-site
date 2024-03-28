@@ -6,7 +6,6 @@ import { Footer } from './components/footer/Footer';
 import { MainPage } from './pages/Main';
 import { Route, Routes } from 'react-router-dom';
 import { NewsPage } from './pages/News/NewsPage';
-import { routes } from './routes';
 import { ProductPage } from './pages/Product/ProductPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 
@@ -26,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/products" element={<ProductPage />} />
+          <Route path="/products" element={<ProductPage category={1} />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </main>

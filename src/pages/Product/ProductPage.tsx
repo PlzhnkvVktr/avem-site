@@ -1,32 +1,32 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./ProductPage.module.css"
+import { fetchProductsByCategory } from "../../store/reducers/ActionCreators"
 
 type Props = {
-    
+    category: number
 }
 
-export const ProductPage: React.FC<Props> = () => {
+export const ProductPage: React.FC<Props> = ({category}) => {
 
   const dispatch = useAppDispatch()
-  const {news, isLoading, error} = useAppSelector(state => state.newsReducer)
-  console.log(news)
+  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  
+  useEffect(() => {
+    dispatch(fetchProductsByCategory(category))
+  }, [])
+
+  console.log([products])
   
     return (
-      <div className={s.news_item_container}>
-        {/* {news.map(
+      <div className={s.product_container}>
+        {products.map(
           item => 
-          <div className={s.news}>
-            <h2>{item.title}</h2>
-            {item.message.split("\n").map(
-              it => 
-              <p>{it}</p>
-              )
-            }
-            <hr/>
+          <div>
+            <p>{item.name}</p>
+            <p>{item.description}</p>
           </div>
-        )} */}
-        <p>UUUUUU</p>
+        )}
       </div>
     )
 }

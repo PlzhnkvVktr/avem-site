@@ -9,25 +9,12 @@ type Props = {
 export const ProductCategoryPage: React.FC<Props> = () => {
 
   const dispatch = useAppDispatch()
-  const {news, isLoading, error} = useAppSelector(state => state.newsReducer)
-  console.log(news)
+  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  console.log(products)
   
     return (
-      <main>
-        <div className={s.news_item_container}>
-          {news.map(
-            item => 
-            <div className={s.news}>
-              <h2>{item.title}</h2>
-              {item.message.split("\n").map(
-                it => 
-                <p>{it}</p>
-                )
-              }
-              <hr/>
-            </div>
-          )}
-        </div>
-      </main>
+      <>
+        
+      </>
     )
 }
