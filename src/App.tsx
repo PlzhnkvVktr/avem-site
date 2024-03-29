@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
-import { fetchNews, fetchProducts, fetchProductsByCategory } from './store/reducers/ActionCreators';
+import { fetchNews, fetchProductsByCategory } from './store/reducers/ActionCreators';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 import { MainPage } from './pages/Main';
 import { Route, Routes } from 'react-router-dom';
 import { NewsPage } from './pages/News/NewsPage';
-import { ProductPage } from './pages/Product/ProductPage';
+import { ProductsListPage } from './pages/ProductList/ProductsListPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { ProductPage } from './pages/Product/ProductPage';
 
 function App() {
-  const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  // const dispatch = useAppDispatch()
+  // const {products, isLoading, error} = useAppSelector(state => state.productReducer)
 
-  useEffect(() => {
-    dispatch(fetchProducts())
-    console.log(products)
-  }, [])
+  // useEffect(() => {
+  //   dispatch(fetchProducts())
+  //   console.log(products)
+  // }, [])
 
   return (
     <div className="App">
@@ -25,7 +26,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/products" element={<ProductPage category={1} />} />
+          <Route path="/products/category/:id" element={<ProductsListPage />} />
+          <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </main>

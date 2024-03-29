@@ -1,32 +1,28 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./ProductPage.module.css"
-import { fetchProductsByCategory } from "../../store/reducers/ActionCreators"
+import { fetchProductItem, fetchProductsByCategory } from "../../store/reducers/ActionCreators"
+import { Link, useParams } from "react-router-dom"
 
-type Props = {
-    category: number
-}
+type Props = {}
 
-export const ProductPage: React.FC<Props> = ({category}) => {
+export const ProductPage: React.FC<Props> = () => {
 
+
+  const params = useParams()
   const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  const {product, isLoading, error} = useAppSelector(state => state.productItemReducer)
   
   useEffect(() => {
-    dispatch(fetchProductsByCategory(category))
+    dispatch(fetchProductItem(params.id as string))
+    console.log(params.id)
   }, [])
 
-  console.log([products])
   
     return (
       <div className={s.product_container}>
-        {products.map(
-          item => 
-          <div>
-            <p>{item.name}</p>
-            <p>{item.description}</p>
-          </div>
-        )}
+        <p>{product.id}</p>
+        <p>{product.name}</p>
       </div>
     )
 }

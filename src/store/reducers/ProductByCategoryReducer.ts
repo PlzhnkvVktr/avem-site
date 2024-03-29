@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "../../models/IProduct";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { IProduct } from "../../models/IProduct"
 
 interface ProductState {
     products: IProduct[]
@@ -13,23 +13,23 @@ const initialState: ProductState = {
     error: ""
 }
 
-export const productSlice = createSlice({
-    name: 'products',
+export const productByCategorySlice = createSlice({
+    name: 'productsByCategory',
     initialState,
     reducers: {
-        productFetching(state) {
+        productByCategoryFetching(state) {
             state.isLoading = true
         },
-        productFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
+        productByCategoryFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
             state.isLoading = false
             state.error = ''
             state.products = action.payload
         },
-        productFetchingError(state, action: PayloadAction<string>) {
+        productByCategoryFetchingError(state, action: PayloadAction<string>) {
             state.isLoading = false
             state.error = action.payload
         }
     }
 })
 
-export default productSlice.reducer
+export default productByCategorySlice.reducer
