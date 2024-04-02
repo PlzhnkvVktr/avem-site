@@ -1,6 +1,12 @@
 .news_item_container {
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
     p{
       text-align: left;
     }

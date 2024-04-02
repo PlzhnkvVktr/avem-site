@@ -14,7 +14,9 @@ export const ProductPage: React.FC<Props> = () => {
   const {product, isLoading, error} = useAppSelector(state => state.productItemReducer)
   
   useEffect(() => {
-    dispatch(fetchProductItem(params.id as string))
+    dispatch(fetchProductItem((params.id as string).substr(1)))
+    
+    console.log("========")
     console.log(params.id)
   }, [])
 
@@ -23,6 +25,10 @@ export const ProductPage: React.FC<Props> = () => {
       <div className={s.product_container}>
         <p>{product.id}</p>
         <p>{product.name}</p>
+        <p>{product.description}</p>
+        <p>{product.specification}</p>
+        <p>{product.additionally}</p>
+        <p>{product.characteristic}</p>
       </div>
     )
 }

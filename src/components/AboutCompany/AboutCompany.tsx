@@ -14,7 +14,7 @@ export const AboutCompany: React.FC<Props> = () => {
   
   const dispatch = useAppDispatch()
   const {news, isLoading, error} = useAppSelector(state => state.newsReducer)
-  const newsList = news.slice(0, 3)
+  const newsList = news.slice(0, 4)
 
   useEffect(() => {
     dispatch(fetchNews())

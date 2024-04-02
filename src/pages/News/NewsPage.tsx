@@ -19,14 +19,15 @@ export const NewsPage: React.FC<Props> = () => {
     return (
       <div className={s.news_item_container}>
         {news.map(
-          item => 
-          <div className={s.news}>
+          (item, key) => 
+          <div className={s.news} key={key}>
             <h2>{item.title}</h2>
-            {item.message.split("\n").map(
+            {/* {item.message.split("\n").map(
               it => 
               <p>{it}</p>
               )
-            }
+            } */}
+            <div dangerouslySetInnerHTML={{ __html: item.message }} />
             <hr/>
           </div>
         )}

@@ -11,9 +11,7 @@ export const NewsFeedItem: React.FC<Props> = ({news}) => {
   
     return (
       <div className={s.news_item_container}>
-        <p>
-          {news.title}
-        </p>
+        <h3>{news.title}</h3>
       </div>
     )
 }
