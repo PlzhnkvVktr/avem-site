@@ -16,6 +16,7 @@ export const ProductsListPage: React.FC<Props> = () => {
   
   useEffect(() => {
     dispatch(fetchProductsByCategory(params.id as string))
+    console.log(params)
   }, [])
 
   
@@ -26,7 +27,7 @@ export const ProductsListPage: React.FC<Props> = () => {
           <div className={s.item_container}>
             <img />
             <div>
-              <h2><Link to={"/products/:" + item.id}>{item.name}</Link></h2>
+              <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
             </div>
           </div>
         )}

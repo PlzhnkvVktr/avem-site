@@ -7,6 +7,7 @@ import { GetThunkAPI, createAsyncThunk } from "@reduxjs/toolkit/dist/createAsync
 import { IProduct } from "../../models/IProduct";
 import { productByCategorySlice } from "./ProductByCategoryReducer";
 import { productItemSlice } from "./ProductItemReducer";
+import { newsItemSlice } from "./NewsItemReducer";
 
 
 
@@ -19,6 +20,17 @@ export const fetchNews = () => async (dispatch: AppDispatch) => {
         dispatch(newsSlice.actions.newsFetchingError(e.message))
     }
 }
+
+export const fetchNewsItem = (id: string) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(newsItemSlice.actions.newsItemFetching())
+        const response = await axios.get<INews>("http://127.0.0.1:8080/news/" + id)
+        dispatch(newsItemSlice.actions.newsItemFetchingSuccess(response.data))
+    } catch (e: any) {
+        dispatch(newsItemSlice.actions.newsItemFetchingError(e.message))
+    }
+}
+
 
 export const fetchProductItem = (id: string) => async (dispatch: AppDispatch) => {
     try {

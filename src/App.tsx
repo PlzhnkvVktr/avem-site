@@ -9,6 +9,7 @@ import { NewsPage } from './pages/News/NewsPage';
 import { ProductsListPage } from './pages/ProductList/ProductsListPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { ProductPage } from './pages/Product/ProductPage';
+import { NewsItemPage } from './pages/NewsItemPage/NewsItemPage';
 
 function App() {
   // const dispatch = useAppDispatch()
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/*" element={<NotFoundPage />} />

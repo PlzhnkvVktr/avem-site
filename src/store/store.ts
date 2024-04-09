@@ -3,12 +3,14 @@ import newsReducer from "./reducers/NewsReducer";
 import productReducer from "./reducers/ProductReducer";
 import productReducerByCategory from "./reducers/ProductByCategoryReducer";
 import productItemReducer from "./reducers/ProductItemReducer";
+import newsItemReducer from "./reducers/NewsItemReducer";
 
 const rootReducer = combineReducers({
     newsReducer,
     productReducer,
     productReducerByCategory,
-    productItemReducer
+    productItemReducer,
+    newsItemReducer
 })
 
 export const setupStore = () => {
