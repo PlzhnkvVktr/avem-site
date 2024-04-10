@@ -10,6 +10,9 @@ import { ProductsListPage } from './pages/ProductList/ProductsListPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { ProductPage } from './pages/Product/ProductPage';
 import { NewsItemPage } from './pages/NewsItemPage/NewsItemPage';
+import { AboutPage } from './pages/About/AboutPage';
+import { JobVacancyPage } from './pages/JobVacancy/JobVacancyPage';
+import { ContactsPage } from './pages/Сontacts/ContactsPage';
 
 function App() {
   // const dispatch = useAppDispatch()
@@ -26,6 +29,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/jobvacancy" element={<JobVacancyPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />

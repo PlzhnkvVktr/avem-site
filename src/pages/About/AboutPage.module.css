@@ -1,0 +1,32 @@
+.about_container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+    h1 {
+        text-align: left;
+        font-size: 55px;
+    }
+
+    .about_info {
+        ul {
+            padding:0;
+            list-style: none;
+        }
+        ul li{
+            padding:6px;
+        }
+        ul li:before {
+            padding-right:10px;
+            font-weight: bold;
+            color: #77AEDB;
+            content: "\2606";
+            transition-duration: 0.5s;
+        }
+        ul li:hover:before {
+            color: #337AB7;
+            content: "\2605";
+        }
+    }
+}

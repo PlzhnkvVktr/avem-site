@@ -21,9 +21,9 @@ export const Header: React.FC<Props> = () => {
             />
           </Link>
           <div className={s.servis_menu}>
-            <Link to="/products" className={s.links}>О компании</Link>
-            <Link to="/cart" className={s.links}>Вакансии</Link>
-            <Link to="/cart" className={s.links}>Контакты</Link>
+            <Link to="/about" className={s.links}>О компании</Link>
+            <Link to="/jobvacancy" className={s.links}>Вакансии</Link>
+            <Link to="/contacts" className={s.links}>Контакты</Link>
             <Link to="/cart" className={s.links}>Гарантии</Link>
             <hr />
             <Navbar />

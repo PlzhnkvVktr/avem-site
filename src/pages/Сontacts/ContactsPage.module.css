@@ -1,0 +1,35 @@
+.contacts_container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+    h1 {
+        text-align: left;
+        font-size: 55px;
+    }
+    .feedback {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        padding: 10px;
+        width: 80%;
+        height: 100%;
+        background-color: rgb(203, 238, 238);
+
+        strong {
+            margin-top: 20px;
+        }
+        p {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    .map_container {
+        display: flex;
+        justify-content: center;
+
+    }
+    
+}
