@@ -12,7 +12,7 @@ export const MainPage: React.FC<Props> = () => {
       <>
         <ProductLinks />
         <AboutCompany />
-        {/* <Carousel /> */}
+        <Carousel />
         {/* <News /> */}
       </>
     )

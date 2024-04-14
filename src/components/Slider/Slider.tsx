@@ -45,7 +45,7 @@ export const Carousel = () => {
     return (
       <div className={s.carousel}>
         <button className={s.carousel_button_prev} onClick={prevSlideButtonAction}>&lt;</button>
-        <img src={slides[currentSlide]} alt={slides[currentSlide]} style={{ width: '80%', margin: 'auto' }} />
+        <img src={slides[currentSlide]} alt={slides[currentSlide]} />
         <button className={s.carousel_button_next} onClick={nextSlideButtonAction}>&gt;</button>
       </div>
     );
