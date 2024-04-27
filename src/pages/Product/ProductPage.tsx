@@ -19,13 +19,15 @@ export const ProductPage: React.FC<Props> = () => {
 
   
     return (
-      <div className={s.product_container}>
-        <p>{product.id}</p>
-        <p>{product.name}</p>
-        <p>{product.description}</p>
-        <p>{product.specification}</p>
-        <p>{product.additionally}</p>
-        <p>{product.characteristic}</p>
-      </div>
+      <main>
+        <div className={s.product_container}>
+          <p>{product.id}</p>
+          <p>{product.name}</p>
+          <p>{product.description}</p>
+          <p>{product.specification}</p>
+          <p>{product.additionally}</p>
+          <p>{product.characteristic}</p>
+        </div>
+      </main>
     )
 }

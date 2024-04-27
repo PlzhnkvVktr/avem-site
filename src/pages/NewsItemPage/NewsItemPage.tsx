@@ -18,11 +18,11 @@ export const NewsItemPage: React.FC<Props> = () => {
     }, [])
 
       return (
-        <div>
+        <main>
             <div>
               <h2>{newsItem.title}</h2>
               <div dangerouslySetInnerHTML={{ __html: newsItem.message }} />
             </div>
-        </div>
+        </main>
       )
 }

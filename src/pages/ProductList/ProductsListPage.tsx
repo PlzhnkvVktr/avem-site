@@ -21,16 +21,18 @@ export const ProductsListPage: React.FC<Props> = () => {
 
   
     return (
-      <div className={s.product_container}>
-        {products.map(
-          item => 
-          <div className={s.item_container}>
-            <img />
-            <div>
-              <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+      <main>
+        <div className={s.product_container}>
+          {products.map(
+            item => 
+            <div className={s.item_container}>
+              <img />
+              <div>
+                <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </main>
     )
 }

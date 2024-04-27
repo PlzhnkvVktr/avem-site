@@ -9,6 +9,8 @@ type Props = {
 export const NotFoundPage: React.FC<Props> = () => {
 
     return (
-        <h1>TAKOI STRANICI NET</h1>
+        <main>
+            <h1>TAKOI STRANICI NET</h1>
+        </main>
     )
 }

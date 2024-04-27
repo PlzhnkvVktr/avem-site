@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
-import { fetchNews, fetchProductsByCategory } from './store/reducers/ActionCreators';
+import { fetchNews, fetchPages, fetchProductsByCategory } from './store/reducers/ActionCreators';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 import { MainPage } from './pages/Main';
@@ -13,32 +13,37 @@ import { NewsItemPage } from './pages/NewsItemPage/NewsItemPage';
 import { AboutPage } from './pages/About/AboutPage';
 import { JobVacancyPage } from './pages/JobVacancy/JobVacancyPage';
 import { ContactsPage } from './pages/Сontacts/ContactsPage';
+import { EditablePage } from './pages/EditablePage/EditablePage';
 
 function App() {
-  // const dispatch = useAppDispatch()
-  // const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  const dispatch = useAppDispatch()
+  const {pages, isLoading, error} = useAppSelector(state => state.pageReducer)
 
-  // useEffect(() => {
-  //   dispatch(fetchProducts())
-  //   console.log(products)
-  // }, [])
+  useEffect(() => {
+    dispatch(fetchPages())
+  }, [])
 
   return (
     <div className="App">
       <Header />
-      <main>
+      <>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
+          {/* <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/jobvacancy" element={<JobVacancyPage />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about" element={<AboutPage />} /> */}
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/*" element={<NotFoundPage />} />
+          {
+            pages.map((item, key) => 
+                <Route key={key} path={item.path} element={<EditablePage html={item.html} />} />
+              )
+          }
         </Routes>
-      </main>
+      </>
       <Footer />
     </div>
   );

@@ -8,13 +8,16 @@ import { IProduct } from "../../models/IProduct";
 import { productByCategorySlice } from "./ProductByCategoryReducer";
 import { productItemSlice } from "./ProductItemReducer";
 import { newsItemSlice } from "./NewsItemReducer";
+import { API_URL } from "../../const/const";
+import { pageSlice } from "./PagesReducer";
+import { IPage } from "../../models/IPage";
 
 
 
 export const fetchNews = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(newsSlice.actions.newsFetching())
-        const response = await axios.get<INews[]>("http://127.0.0.1:8080/news")
+        const response = await axios.get<INews[]>(API_URL + "news")
         dispatch(newsSlice.actions.newsFetchingSuccess(response.data))
     } catch (e: any) {
         dispatch(newsSlice.actions.newsFetchingError(e.message))
@@ -24,7 +27,7 @@ export const fetchNews = () => async (dispatch: AppDispatch) => {
 export const fetchNewsItem = (id: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(newsItemSlice.actions.newsItemFetching())
-        const response = await axios.get<INews>("http://127.0.0.1:8080/news/" + id)
+        const response = await axios.get<INews>(API_URL + "news/" + id)
         dispatch(newsItemSlice.actions.newsItemFetchingSuccess(response.data))
     } catch (e: any) {
         dispatch(newsItemSlice.actions.newsItemFetchingError(e.message))
@@ -35,7 +38,7 @@ export const fetchNewsItem = (id: string) => async (dispatch: AppDispatch) => {
 export const fetchProductItem = (id: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(productItemSlice.actions.productItemFetching())
-        const response = await axios.get<IProduct>("http://127.0.0.1:8080/products/" + id)
+        const response = await axios.get<IProduct>(API_URL + "products/" + id)
         dispatch(productItemSlice.actions.productItemFetchingSuccess(response.data))
     } catch (e: any) {
         dispatch(productItemSlice.actions.productItemFetchingError(e.message))
@@ -45,9 +48,19 @@ export const fetchProductItem = (id: string) => async (dispatch: AppDispatch) =>
 export const fetchProductsByCategory = (category: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(productByCategorySlice.actions.productByCategoryFetching())
-        const response = await axios.get<IProduct[]>("http://127.0.0.1:8080/products/category/" + category)
+        const response = await axios.get<IProduct[]>(API_URL + "products/category/" + category)
         dispatch(productByCategorySlice.actions.productByCategoryFetchingSuccess(response.data))
     } catch (e: any) {
         dispatch(productByCategorySlice.actions.productByCategoryFetchingError(e.message))
+    }
+}
+
+export const fetchPages = () => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(pageSlice.actions.pageFetching())
+        const response = await axios.get<IPage[]>(API_URL + "/pages")
+        dispatch(pageSlice.actions.pageFetchingSuccess(response.data))
+    } catch (e: any) {
+        dispatch(pageSlice.actions.pageFetchingError(e.message))
     }
 }
