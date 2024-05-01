@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import { fetchNewsItem } from "../../store/reducers/ActionCreators"
 import { Link, useParams } from "react-router-dom"
+import s from "./NewsItemPage.module.css"
 
 type Props = {
     
@@ -19,7 +20,7 @@ export const NewsItemPage: React.FC<Props> = () => {
 
       return (
         <main>
-            <div>
+            <div className={s.news_container}>
               <h2>{newsItem.title}</h2>
               <div dangerouslySetInnerHTML={{ __html: newsItem.message }} />
             </div>
