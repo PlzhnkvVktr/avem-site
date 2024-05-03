@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./ProductsListPage.module.css"
 import { fetchProductsByCategory } from "../../store/reducers/ActionCreators"
 import { Link, useParams } from "react-router-dom"
+import Col from "react-bootstrap/esm/Col"
+import Image from 'react-bootstrap/Image';
 
 type Props = {
 }
@@ -26,7 +28,7 @@ export const ProductsListPage: React.FC<Props> = () => {
           {products.map(
             item => 
             <div className={s.item_container}>
-              <img />
+                <Image src={item.card_img} thumbnail />
               <div>
                 <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
               </div>

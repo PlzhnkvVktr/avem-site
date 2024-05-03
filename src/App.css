@@ -10,6 +10,14 @@ body {
   height: 100%;
   font: inherit;
   vertical-align: baseline;
+
+  .nav-link {
+    color: black;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 header {
   margin-bottom: 30px;
@@ -25,10 +33,21 @@ nav {
   margin: 10px auto 0;
 }
 
-/* main {
+main {
   width: 80%;
   margin: 0 auto;
-} */
+}
+
+.network_info_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.loader {
+  margin: 0 auto;
+  width: 400px !important;
+  height: 400px !important;
+}
 
 
 footer {
@@ -57,11 +76,9 @@ footer {
   }
 }
 
-a {
-  text-decoration: none;
-}
 
 .page_container {
   width: 70%;
   margin: 0 auto;
 }
+

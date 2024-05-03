@@ -10,6 +10,7 @@ interface ProductItemState {
 const initialState: ProductItemState = {
     product: {
         id: "",
+        card_img: "",
         name: "",
         description: "",
         characteristic: "",
