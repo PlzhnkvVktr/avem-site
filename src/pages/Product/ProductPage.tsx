@@ -33,16 +33,16 @@ export const ProductPage: React.FC<Props> = () => {
             justify
           >
             <Tab eventKey="home" title="Описание">
-              <div dangerouslySetInnerHTML={{ __html: product.name }} />
-            </Tab>
-            <Tab eventKey="profile" title="Характеристика">
               <div dangerouslySetInnerHTML={{ __html: product.description }} />
             </Tab>
+            <Tab eventKey="profile" title="Характеристика">
+              <div dangerouslySetInnerHTML={{ __html: product.characteristic }} />
+            </Tab>
             <Tab eventKey="longer-tab" title="Спецификация">
-              <div dangerouslySetInnerHTML={{ __html: product.additionally }} />
+              <div dangerouslySetInnerHTML={{ __html: product.specification }} />
             </Tab>
             <Tab eventKey="contact" title="Узнать больше">
-              <div dangerouslySetInnerHTML={{ __html: product.characteristic }} />
+              <div dangerouslySetInnerHTML={{ __html: product.additionally }} />
             </Tab>
           </Tabs>
         </div>
