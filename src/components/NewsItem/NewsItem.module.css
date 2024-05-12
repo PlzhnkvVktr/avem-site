@@ -1,9 +1,11 @@
 .news_item_container {
     width: 80%;
     margin: 0 auto;
+
     p{
       text-align: left;
     }
+
     ul {
       text-align: left;
     }

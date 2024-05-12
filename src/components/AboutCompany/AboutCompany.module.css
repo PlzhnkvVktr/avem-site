@@ -4,6 +4,10 @@
     position: relative;
     background-color: rgb(180, 177, 177);
     height: 800px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px;
+    margin-top: 50px;
+
     img {
       position: absolute;
       height: 300px;
@@ -38,7 +42,7 @@
     }
 }
 .news_container {
-    background: rgb(68, 63, 63);
+    background: rgb(233, 230, 230);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -72,4 +76,8 @@
     a { 
       color: white;
     }
+}
+.all_news_link {
+  font-size: 20px;
+  font-style: italic;
 }

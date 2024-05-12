@@ -32,7 +32,7 @@ export const Header: React.FC<Props> = () => {
           <div className={s.servis_menu}>
             {pages.map((item, key) => {
               if (item.visibility) {
-                return (<Link to={item.path} className={s.links}>{item.name}</Link>)
+                return (<Link to={item.path} key={key} className={s.links}>{item.name}</Link>)
               }
             }
               

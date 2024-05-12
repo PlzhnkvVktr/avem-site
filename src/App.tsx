@@ -29,9 +29,6 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          {/* <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/jobvacancy" element={<JobVacancyPage />} />
-          <Route path="/about" element={<AboutPage />} /> */}
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />

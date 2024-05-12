@@ -11,9 +11,8 @@ export const MainPage: React.FC<Props> = () => {
     return (
       <main>
         <ProductLinks />
-        <AboutCompany />
         <Carousel />
-        {/* <News /> */}
+        <AboutCompany />
       </main>
     )
 }

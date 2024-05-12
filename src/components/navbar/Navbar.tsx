@@ -29,7 +29,7 @@ export const Navbar: React.FC<Props> = () => {
             <li><Link to="">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
                 <li><Link to="/products/category/1">ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)</Link></li>
-                <li><Link to="">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>
+                <li><Link to="/products/category/2">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>
                 <li><Link to="">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
                 <li><Link to="">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
                 <li><Link to="">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
