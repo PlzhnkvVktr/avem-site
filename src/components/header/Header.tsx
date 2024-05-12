@@ -37,10 +37,6 @@ export const Header: React.FC<Props> = () => {
             }
               
             )}
-            {/* <Link to="/about" className={s.links}>О компании</Link>
-            <Link to="/jobvacancy" className={s.links}>Вакансии</Link>
-            <Link to="/contacts" className={s.links}>Контакты</Link>
-            <Link to="/cart" className={s.links}>Гарантии</Link> */}
             <hr />
             <Navbar />
           </div>
