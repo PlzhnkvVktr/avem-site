@@ -9,9 +9,11 @@ export const Carousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [trigger, setTrigger] = useState(false)
     const [slides, setSlides] = useState([
-        "https://www.rosmebel-nt.ru/images/2018/02/07/vakansii.jpg", 
-        "https://kh174.ru/images/obsluzhivanie%20sistemy%20ventilyatsii.jpg",
-        "https://sgm.by/slider/build/1.jpg"
+      "https://static.tildacdn.com/tild3263-3436-4364-b839-363537386464/DSC_7319_1.jpg",
+      "https://static.tildacdn.com/tild6337-6264-4262-a439-366639353265/IMG_20230909_105829_.jpg",
+      "https://www.rosmebel-nt.ru/images/2018/02/07/vakansii.jpg", 
+      "https://kh174.ru/images/obsluzhivanie%20sistemy%20ventilyatsii.jpg",
+      "https://sgm.by/slider/build/1.jpg"
     ])
 
     useEffect(() => { 

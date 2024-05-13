@@ -30,15 +30,15 @@ export const Navbar: React.FC<Props> = () => {
               <ul className={s.submenu}>
                 <li><Link to="/products/category/1">ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)</Link></li>
                 <li><Link to="/products/category/2">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>
-                <li><Link to="">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
-                <li><Link to="">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
-                <li><Link to="">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
-                <li><Link to="">ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ</Link></li>
-                <li><Link to="">МЕХАНИЧЕСКИЕ ИСПЫТАНИЯ</Link></li>
-                <li><Link to="">СИСТЕМЫ УЧЕТА ЖИЗНЕННОГО ЦИКЛА ИЗДЕЛИЯ</Link></li>
-                <li><Link to="">ДИАГНОСТИКА РЕСУРСНАЯ</Link></li>
-                <li><Link to="">ДИАГНОСТИКА ЭЛЕКТРОННЫХ КОМПОНЕНТОВ</Link></li>
-                <li><Link to="">ПРОВЕРКА ТРАНСФОРМАТОРОВ</Link></li>
+                <li><Link to="/products/category/">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
+                <li><Link to="/products/category/">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
+                <li><Link to="/products/category/">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
+                <li><Link to="/products/category/">ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ</Link></li>
+                <li><Link to="/products/category/">МЕХАНИЧЕСКИЕ ИСПЫТАНИЯ</Link></li>
+                <li><Link to="/products/category/">СИСТЕМЫ УЧЕТА ЖИЗНЕННОГО ЦИКЛА ИЗДЕЛИЯ</Link></li>
+                <li><Link to="/products/category/">ДИАГНОСТИКА РЕСУРСНАЯ</Link></li>
+                <li><Link to="/products/category/">ДИАГНОСТИКА ЭЛЕКТРОННЫХ КОМПОНЕНТОВ</Link></li>
+                <li><Link to="/products/category/">ПРОВЕРКА ТРАНСФОРМАТОРОВ</Link></li>
               </ul>
             </li>
             <li><Link to="">Автомобильная электромеханика<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
@@ -107,7 +107,13 @@ export const Navbar: React.FC<Props> = () => {
         <li><Link to="">УСЛУГИ</Link></li>
         <li><Link to="">ДОКУМЕНТАЦИЯ</Link></li>
         <li><Link to="">СЕРВИС И ГАРАНТИИ</Link></li>
-        <li><Link to="">ПОДБОР ОБОРУДОВАНИЯ</Link></li>
+        <li><Link to="">О КОМПАНИИ</Link>
+          <ul className={s.submenu}>
+            <li><Link to="">История компании</Link></li>
+            <li><Link to="">Деятельность ГК ООО НПП "АВЭМ" и ООО "Авиаагрегат-Н"</Link></li>
+            <li><Link to="">Наши партнеры</Link></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     )

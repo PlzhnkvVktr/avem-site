@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import s from './Footer.module.css'
 import vk from "../../image/vk.png"
 import instagram from "../../image/instagram.png"
-import telegram from "../../image/telegram.png"
+import telegram from "../../image/telegram1.png"
 import youtobe from "../../image/youtube.png"
 
 type Props = {
