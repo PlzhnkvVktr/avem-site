@@ -43,6 +43,7 @@ nav {
 main {
   width: 80%;
   margin: 0 auto;
+  min-height: calc(100vh - 360px - 200px - 50px);
 }
 
 .network_info_container {
@@ -62,7 +63,7 @@ main {
 
 footer {
   bottom: 0;
-  /* height: 360px; */
+  height: 360px;
   margin-top: 50px;
   /* min-height: calc(100vh - 360px - 200px); */
   display: flex;
