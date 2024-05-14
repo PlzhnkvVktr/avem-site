@@ -26,7 +26,7 @@ export const Navbar: React.FC<Props> = () => {
       <ul className={s.topmenu}>
         <li><Link to="" className={s.active}>ПРОДУКЦИЯ<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
           <ul className={s.submenu}>
-            <li><Link to="">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+            <li><Link to="/1">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
                 <li><Link to="/products/category/1">ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)</Link></li>
                 <li><Link to="/products/category/2">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>

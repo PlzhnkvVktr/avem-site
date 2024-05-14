@@ -17,9 +17,13 @@ export const ProductsListPage: React.FC<Props> = () => {
   const params = useParams()
   const dispatch = useAppDispatch()
   const {products, isLoading, error} = useAppSelector(state => state.productReducerByCategory)
+  const category: any = params.id?.split('.')
+  
+  // products.filter(item => item.subcategory == 1).map
   
   useEffect(() => {
-    dispatch(fetchProductsByCategory(params.id as string))
+    const category: any = params.id?.split('.')
+    dispatch(fetchProductsByCategory(category[0] as string))
   }, [params.id])
 
   if (isLoading) return <Loader />
@@ -28,7 +32,7 @@ export const ProductsListPage: React.FC<Props> = () => {
     return (
       <main>
         <div className={s.product_container}>
-          {products.map(
+          {products.filter(item => item.subcategory == category[1]).map(
             (item, key) => 
             <div key={key} className={s.item_container}>
                 <Image src={item.card_img} thumbnail />

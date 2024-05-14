@@ -14,6 +14,7 @@ import { AboutPage } from './pages/About/AboutPage';
 import { JobVacancyPage } from './pages/JobVacancy/JobVacancyPage';
 import { ContactsPage } from './pages/Сontacts/ContactsPage';
 import { EditablePage } from './pages/EditablePage/EditablePage';
+import { ProductCategoryPage } from './pages/ProductCaterogy/ProductCategoryPage';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -33,6 +34,7 @@ function App() {
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
+          <Route path="/1" element={<ProductCategoryPage />} />
           <Route path="/*" element={<NotFoundPage />} />
           {
             pages.map((item, key) => 

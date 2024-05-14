@@ -1,16 +1,33 @@
-.news_item_container {
+.product_container {
     width: 70%;
     margin: 0 auto;
-    
+    padding: 2%;
     
 }
-.news {
-    margin-bottom: 30px;
-    h2 {
-        width: 70%;
-        text-align: start;
+.item_container {
+    margin-top: 50px;
+    padding: 5px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px;
+
+    img {
+        width: 200px;
+        height: 200px;
     }
-    p {
-        text-indent: 25px;
+    div {
+        width: 70%;
+        /* text-align: start; */
+        /* vertical-align: middle; */
+        display: flex;
+        align-items: center
+    }
+    a {
+        text-decoration: none;
+        color: black;
     }
 }
