@@ -34,7 +34,7 @@ function App() {
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
-          <Route path="/1" element={<ProductCategoryPage />} />
+          <Route path="/products/subcategory/:id" element={<ProductCategoryPage />} />
           <Route path="/*" element={<NotFoundPage />} />
           {
             pages.map((item, key) => 

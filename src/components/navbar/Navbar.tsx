@@ -26,22 +26,22 @@ export const Navbar: React.FC<Props> = () => {
       <ul className={s.topmenu}>
         <li><Link to="" className={s.active}>ПРОДУКЦИЯ<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
           <ul className={s.submenu}>
-            <li><Link to="/1">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+            <li><Link to="/products/category/1">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
                 <li><Link to="/products/category/1">ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)</Link></li>
                 <li><Link to="/products/category/2">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>
-                <li><Link to="/products/category/">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
-                <li><Link to="/products/category/">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
-                <li><Link to="/products/category/">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
-                <li><Link to="/products/category/">ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ</Link></li>
-                <li><Link to="/products/category/">МЕХАНИЧЕСКИЕ ИСПЫТАНИЯ</Link></li>
-                <li><Link to="/products/category/">СИСТЕМЫ УЧЕТА ЖИЗНЕННОГО ЦИКЛА ИЗДЕЛИЯ</Link></li>
-                <li><Link to="/products/category/">ДИАГНОСТИКА РЕСУРСНАЯ</Link></li>
-                <li><Link to="/products/category/">ДИАГНОСТИКА ЭЛЕКТРОННЫХ КОМПОНЕНТОВ</Link></li>
-                <li><Link to="/products/category/">ПРОВЕРКА ТРАНСФОРМАТОРОВ</Link></li>
+                <li><Link to="/products/category/3">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
+                <li><Link to="/products/category/4">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
+                <li><Link to="/products/category/5">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
+                <li><Link to="/products/category/6">ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ</Link></li>
+                <li><Link to="/products/category/7">МЕХАНИЧЕСКИЕ ИСПЫТАНИЯ</Link></li>
+                <li><Link to="/products/category/8">СИСТЕМЫ УЧЕТА ЖИЗНЕННОГО ЦИКЛА ИЗДЕЛИЯ</Link></li>
+                <li><Link to="/products/category/9">ДИАГНОСТИКА РЕСУРСНАЯ</Link></li>
+                <li><Link to="/products/category/10">ДИАГНОСТИКА ЭЛЕКТРОННЫХ КОМПОНЕНТОВ</Link></li>
+                <li><Link to="/products/category/11">ПРОВЕРКА ТРАНСФОРМАТОРОВ</Link></li>
               </ul>
             </li>
-            <li><Link to="">Автомобильная электромеханика<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+            <li><Link to="/products/category/2">Автомобильная электромеханика<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
                 <li><Link to="">Электромеханический усилитель рулевого управления (ЭУРУ)</Link></li>
                 <li><Link to="">Стартер-генераторная установка (СГУ)</Link></li>
@@ -50,7 +50,7 @@ export const Navbar: React.FC<Props> = () => {
                 <li><Link to="">Информационная поддержка жизненного цикла изделия</Link></li>
               </ul>
             </li>
-            <li><Link to="">Приборы<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+            <li><Link to="/products/category/3">Приборы<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
                 <li><Link to="">Мегаомметры АВЭМ-9</Link></li>
                 <li><Link to="">Прибор измерительный Амперметр АВЭМ-7</Link></li>

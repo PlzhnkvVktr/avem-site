@@ -13,17 +13,14 @@ type Props = {
 
 export const ProductsListPage: React.FC<Props> = () => {
 
-
   const params = useParams()
   const dispatch = useAppDispatch()
   const {products, isLoading, error} = useAppSelector(state => state.productReducerByCategory)
-  const category: any = params.id?.split('.')
   
   // products.filter(item => item.subcategory == 1).map
   
   useEffect(() => {
-    const category: any = params.id?.split('.')
-    dispatch(fetchProductsByCategory(category[0] as string))
+    dispatch(fetchProductsByCategory(params.id as string))
   }, [params.id])
 
   if (isLoading) return <Loader />
@@ -31,17 +28,46 @@ export const ProductsListPage: React.FC<Props> = () => {
   
     return (
       <main>
+        2
         <div className={s.product_container}>
-          {products.filter(item => item.subcategory == category[1]).map(
-            (item, key) => 
-            <div key={key} className={s.item_container}>
-                <Image src={item.card_img} thumbnail />
-              <div>
-                <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+          {
+            products.map(
+              (item, key) => 
+              <div key={key} className={s.item_container}>
+                  <Image src={item.card_img} thumbnail />
+                <div>
+                  <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+                </div>
               </div>
-            </div>
-          )}
+            ) 
+          }
         </div>
       </main>
     )
 }
+
+
+
+// {products.map(
+//   (item, key) => {
+//     if (params.id?.includes(".")) {
+//       return (
+//         <div key={key} className={s.item_container}>
+//             <Image src={item.card_img} thumbnail />
+//           <div>
+//             <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+//           </div>
+//         </div>
+//       ) 
+//     } else {
+//       return (
+//         <div key={key} className={s.item_container}>
+//             <Image src={item.card_img} thumbnail />
+//           <div>
+//             <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+//           </div>
+//         </div>
+//       ) 
+//     }
+//   }
+// )}
