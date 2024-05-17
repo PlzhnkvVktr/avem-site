@@ -1,12 +1,14 @@
 import React from 'react'
 import s from './Navbar.module.css'
 import { Link } from 'react-router-dom'
+import { categoryes } from '../../pages/ProductCaterogy/ProductCategoryPage'
+import { IPage } from '../../models/IPage'
 
 type Props = {
-    
+    pages: IPage[]
 }
 
-export const Navbar: React.FC<Props> = () => {
+export const Navbar: React.FC<Props> = ({pages}) => {
   
     return (
       <nav className={s.navbar}>
@@ -26,32 +28,22 @@ export const Navbar: React.FC<Props> = () => {
       <ul className={s.topmenu}>
         <li><Link to="" className={s.active}>ПРОДУКЦИЯ<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
           <ul className={s.submenu}>
-            <li><Link to="/products/category/1">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+            <li><Link to="/products_subcategory">Испытательное оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
               <ul className={s.submenu}>
-                <li><Link to="/products/category/1">ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)</Link></li>
-                <li><Link to="/products/category/2">ИСПЫТАНИЕ ТУРБОГЕНЕРАТОРОВ И ГЕНЕРАТОРОВ ВЫСОКОВОЛЬТНАЯ РЕЗОНАНСНАЯ УСТАНОВКА</Link></li>
-                <li><Link to="/products/category/3">НАГРУЗОЧНЫЕ УСТРОЙСТВА</Link></li>
-                <li><Link to="/products/category/4">ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН</Link></li>
-                <li><Link to="/products/category/5">КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН</Link></li>
-                <li><Link to="/products/category/6">ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ</Link></li>
-                <li><Link to="/products/category/7">МЕХАНИЧЕСКИЕ ИСПЫТАНИЯ</Link></li>
-                <li><Link to="/products/category/8">СИСТЕМЫ УЧЕТА ЖИЗНЕННОГО ЦИКЛА ИЗДЕЛИЯ</Link></li>
-                <li><Link to="/products/category/9">ДИАГНОСТИКА РЕСУРСНАЯ</Link></li>
-                <li><Link to="/products/category/10">ДИАГНОСТИКА ЭЛЕКТРОННЫХ КОМПОНЕНТОВ</Link></li>
-                <li><Link to="/products/category/11">ПРОВЕРКА ТРАНСФОРМАТОРОВ</Link></li>
+                {categoryes.map((item, key) => <li key={key}><Link to={item.link}>{item.title}</Link></li>)}
               </ul>
             </li>
             <li><Link to="/products/category/2">Автомобильная электромеханика<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Электромеханический усилитель рулевого управления (ЭУРУ)</Link></li>
                 <li><Link to="">Стартер-генераторная установка (СГУ)</Link></li>
                 <li><Link to="">Имитатор управляющих сигналов</Link></li>
                 <li><Link to="">Универсальный мотор-редуктор</Link></li>
                 <li><Link to="">Информационная поддержка жизненного цикла изделия</Link></li>
-              </ul>
+              </ul> */}
             </li>
             <li><Link to="/products/category/3">Приборы<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Мегаомметры АВЭМ-9</Link></li>
                 <li><Link to="">Прибор измерительный Амперметр АВЭМ-7</Link></li>
                 <li><Link to="">Измерители электрического сопротивления постоянному току ИКАС-10 </Link></li>
@@ -63,10 +55,10 @@ export const Navbar: React.FC<Props> = () => {
                 <li><Link to="">Установки испытательные высоковольтные ВИУ (малотоковые)</Link></li>
                 <li><Link to="">Измерительный комплекс активного сопротивления (ИКАС-8) - мост постоянного тока для измерения сопротивления</Link></li>
                 <li><Link to="">Анализатор качества электроэнергии (ППЦ)</Link></li>
-              </ul>
+              </ul> */}
             </li>
-            <li><Link to="">Другое оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+            <li><Link to="/products/category/4">Другое оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Индукционный регулятор напряжения</Link></li>
                 <li><Link to="">Импульсная станция</Link></li>
                 <li><Link to="">Быстродействующий компенсатор реактивной мощности</Link></li>
@@ -83,35 +75,38 @@ export const Navbar: React.FC<Props> = () => {
                 <li><Link to="">Информационная поддержка жизненного цикла изделия</Link></li>
                 <li><Link to="">Электропечь</Link></li>
                 <li><Link to="">Преобразователь частоты</Link></li>
-              </ul>
+              </ul> */}
             </li>
-            <li><Link to="">Гидравлическое оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+            <li><Link to="/products/category/5">Гидравлическое оборудование<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Стенд для испытания толкателей электрогидравлических</Link></li>
-              </ul>
+              </ul> */}
             </li>
-            <li><Link to="">Учебные демонстрационные стенды<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+            <li><Link to="/products/category/6">Учебные демонстрационные стенды<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Стенд гидравлический универсальный СГУ-250</Link></li>
                 <li><Link to="">Автоматизированный стенд для испытания электропневматических и электромагнитных аппаратов электроподвижного состава</Link></li>
-              </ul>
+              </ul> */}
             </li>
-            <li><Link to="">Измерительные системы<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
-              <ul className={s.submenu}>
+            <li><Link to="/products/category/7">Измерительные системы<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+              {/* <ul className={s.submenu}>
                 <li><Link to="">Система измерительная для стендовых испытаний узлов и агрегатов вертолётов СИЛиС</Link></li>
-              </ul>
+              </ul> */}
             </li>
           </ul>
         </li>
         <li><Link to="">ПРОЕКТЫ</Link></li>
-        <li><Link to="">УСЛУГИ</Link></li>
+        <li><Link to="/search">НАЙТИ</Link></li>
         <li><Link to="">ДОКУМЕНТАЦИЯ</Link></li>
         <li><Link to="">СЕРВИС И ГАРАНТИИ</Link></li>
         <li><Link to="">О КОМПАНИИ</Link>
           <ul className={s.submenu}>
-            <li><Link to="">История компании</Link></li>
-            <li><Link to="">Деятельность ГК ООО НПП "АВЭМ" и ООО "Авиаагрегат-Н"</Link></li>
-            <li><Link to="">Наши партнеры</Link></li>
+            {pages.map((item, key) => {
+                if (item.isVisibility && !item.isNavbar) {
+                  return (<li><Link to={item.path} key={key} className={s.links}>{item.name}</Link></li>)
+                }
+              })
+            }
           </ul>
         </li>
       </ul>

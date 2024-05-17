@@ -31,14 +31,14 @@ export const Header: React.FC<Props> = () => {
           </Link>
           <div className={s.servis_menu}>
             {pages.map((item, key) => {
-              if (item.visibility) {
+              if (item.isVisibility && item.isNavbar) {
                 return (<Link to={item.path} key={key} className={s.links}>{item.name}</Link>)
               }
             }
               
             )}
             <hr />
-            <Navbar />
+            <Navbar pages={pages} />
           </div>
           <div className={s.contact_menu}>
             <span>Покупателям</span>

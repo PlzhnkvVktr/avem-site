@@ -17,8 +17,6 @@ export const ProductsListPage: React.FC<Props> = () => {
   const dispatch = useAppDispatch()
   const {products, isLoading, error} = useAppSelector(state => state.productReducerByCategory)
   
-  // products.filter(item => item.subcategory == 1).map
-  
   useEffect(() => {
     dispatch(fetchProductsByCategory(params.id as string))
   }, [params.id])
@@ -28,7 +26,6 @@ export const ProductsListPage: React.FC<Props> = () => {
   
     return (
       <main>
-        2
         <div className={s.product_container}>
           {
             products.map(

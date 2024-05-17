@@ -10,11 +10,10 @@ import { ProductsListPage } from './pages/ProductList/ProductsListPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { ProductPage } from './pages/Product/ProductPage';
 import { NewsItemPage } from './pages/NewsItemPage/NewsItemPage';
-import { AboutPage } from './pages/About/AboutPage';
-import { JobVacancyPage } from './pages/JobVacancy/JobVacancyPage';
-import { ContactsPage } from './pages/Сontacts/ContactsPage';
 import { EditablePage } from './pages/EditablePage/EditablePage';
 import { ProductCategoryPage } from './pages/ProductCaterogy/ProductCategoryPage';
+import { ProductSubcategoryPage } from './pages/ProductSubcategory/ProductSubcategoryPage';
+import { SearchPage } from './pages/SearchPage/SearchPage';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -30,10 +29,12 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
+          <Route path="/products_subcategory" element={<ProductSubcategoryPage />} />
           <Route path="/products/subcategory/:id" element={<ProductCategoryPage />} />
           <Route path="/*" element={<NotFoundPage />} />
           {

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
-import s from "./ProductCategoryPage.module.css"
+import s from "./ProductSubcategoryPage.module.css"
 import { Link, useParams } from "react-router-dom"
 import Image from 'react-bootstrap/Image'
 import viu from "../../image/product/viu.jpg"
@@ -9,7 +9,7 @@ import dvm from "../../image/product/dvm.jpg"
 import stand from "../../image/product/stand.jpg"
 import dcp from "../../image/product/dcp.jpg"
 import tranformation from "../../image/product/tranformation.jpg"
-import { fetchProductsBySubcategory } from "../../store/reducers/ActionCreators"
+// import { fetchProductsBySubategory } from "../../store/reducers/ActionCreators"
 
 type Props = {
     
@@ -48,25 +48,25 @@ export const categoryes = [
   ]
 
 
-export const ProductCategoryPage: React.FC<Props> = () => {
+export const ProductSubcategoryPage: React.FC<Props> = () => {
 
   const params = useParams()
   const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducerBySubcategory)
+  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
 
-  useEffect(() => {
-    dispatch(fetchProductsBySubcategory(params.id as string))
-  }, [params.id])
+  // useEffect(() => {
+  //   dispatch(fetchProductsBySubategory(params.id as string))
+  // }, [])
   
     return (
       <main>
         <div className={s.product_container}>
-          {products.map(
+          {categoryes.map(
             (item, key) => 
             <div key={key} className={s.item_container}>
-                <Image src={item.card_img} thumbnail />
+                <Image src={item.image} thumbnail />
               <div>
-                <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
+                <h2><Link to={item.link}>{item.title}</Link></h2>
               </div>
             </div>
           )}

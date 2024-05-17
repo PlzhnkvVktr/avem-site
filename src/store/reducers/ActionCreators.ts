@@ -11,6 +11,7 @@ import { newsItemSlice } from "./NewsItemReducer";
 import { API_URL } from "../../const/const";
 import { pageSlice } from "./PagesReducer";
 import { IPage } from "../../models/IPage";
+import { productBySubcategorySlice } from "./ProductBySubcategoryReducer";
 
 
 
@@ -55,13 +56,13 @@ export const fetchProductsByCategory = (category: string) => async (dispatch: Ap
     }
 }
 
-export const fetchProductsBySubategory = (subcategory: string) => async (dispatch: AppDispatch) => {
+export const fetchProductsBySubcategory = (subcategory: string) => async (dispatch: AppDispatch) => {
     try {
-        dispatch(productByCategorySlice.actions.productByCategoryFetching())
+        dispatch(productBySubcategorySlice.actions.productBySubcategoryFetching())
         const response = await axios.get<IProduct[]>(API_URL + "products/subcategory/" + subcategory)
-        dispatch(productByCategorySlice.actions.productByCategoryFetchingSuccess(response.data))
+        dispatch(productBySubcategorySlice.actions.productBySubcategoryFetchingSuccess(response.data))
     } catch (e: any) {
-        dispatch(productByCategorySlice.actions.productByCategoryFetchingError(e.message))
+        dispatch(productBySubcategorySlice.actions.productBySubcategoryFetchingError(e.message))
     }
 }
 
