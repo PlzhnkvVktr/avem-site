@@ -1,9 +1,10 @@
-import { useEffect, useLayoutEffect } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./NewsPage.module.css"
 import { fetchNews } from "../../store/reducers/ActionCreators"
 import React from "react"
 import { Link, useLocation } from "react-router-dom"
+import { Pagination } from "../../components/common/Pagination/Pagination"
 
 type Props = {
     
@@ -15,9 +16,16 @@ export const NewsPage: React.FC<Props> = () => {
   const {news, isLoading, error} = useAppSelector(state => state.newsReducer)
   const { pathname } = useLocation()
 
-  useLayoutEffect(() => {
+  const currentPage = useState(1)
+  const newsPerPage = useState(5)
+
+  const lastIndex = currentPage[0] * newsPerPage[0]
+  const firstIndex = lastIndex - newsPerPage[0]
+  const page = news.slice(firstIndex, lastIndex)
+
+  useEffect(() => {
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, page])
 
   useEffect(() => {
     dispatch(fetchNews())
@@ -26,7 +34,7 @@ export const NewsPage: React.FC<Props> = () => {
     return (
       <main>
         <div className={s.news_item_container}>
-          {news.map(
+          {page.map(
             (item, key) => 
             <div className={s.news} key={key}>
               <h2><Link to={"/news/" + item.id}>{item.title}</Link></h2>
@@ -35,6 +43,11 @@ export const NewsPage: React.FC<Props> = () => {
             </div>
           )}
         </div>
+        <Pagination 
+          itemPerPage={newsPerPage[0]}
+          totalItem={news.length}
+          currentPage={currentPage}
+        />
       </main>
     )
 }

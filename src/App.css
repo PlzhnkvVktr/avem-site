@@ -98,3 +98,39 @@ footer {
   margin: 50px auto;
 }
 
+.search_panel {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+
+  .row {
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+
+    input {
+      height: 50px;
+      width: 180%;
+      font-size: 24px;
+    }
+
+    button {
+      height: 50px;
+      width: 120%;
+      font-size: 24px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  cursor: pointer;
+  
+  .page-link {
+    font-size: 26px;
+    margin-right: 10px;
+  }
+}
+
