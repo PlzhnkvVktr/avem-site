@@ -5,19 +5,16 @@ import logo from '../../image/logo.ico'
 import { Navbar } from '../navbar/Navbar'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { fetchPages } from '../../store/reducers/ActionCreators'
+import { IPage } from '../../models/IPage'
+import { IProduct } from '../../models/IProduct'
+import {ICategory} from "../../models/ICategory";
 
 type Props = {
-    
+  categories: ICategory[]
+  pages: IPage[]
 }
 
-export const Header: React.FC<Props> = () => {
-
-  const dispatch = useAppDispatch()
-  const {pages, isLoading, error} = useAppSelector(state => state.pageReducer)
-
-  useEffect(() => {
-    dispatch(fetchPages())
-  }, [])
+export const Header: React.FC<Props> = ({categories, pages}) => {
   
     return (
       <header>
@@ -34,11 +31,10 @@ export const Header: React.FC<Props> = () => {
               if (item.isVisibility && item.isNavbar) {
                 return (<Link to={item.path} key={key} className={s.links}>{item.name}</Link>)
               }
-            }
-              
+            } 
             )}
             <hr />
-            <Navbar pages={pages} />
+            <Navbar pages={pages} categories={categories} />
           </div>
           <div className={s.contact_menu}>
             <span>Покупателям</span>

@@ -3,14 +3,14 @@ import { IProduct } from "../../models/IProduct";
 
 interface ProductState {
     products: IProduct[]
-    isLoading: boolean
-    error: string
+    isLoadingProduct: boolean
+    errorProduct: string
 }
 
 const initialState: ProductState = {
     products: [],
-    isLoading: false,
-    error: ""
+    isLoadingProduct: false,
+    errorProduct: ""
 }
 
 export const productSlice = createSlice({
@@ -18,21 +18,31 @@ export const productSlice = createSlice({
     initialState,
     reducers: {
         productFetching(state) {
-            state.isLoading = true
+            state.isLoadingProduct = true
         },
         productFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
-            state.isLoading = false
-            state.error = ''
+            state.isLoadingProduct = false
+            state.errorProduct = ''
             state.products = action.payload
         },
         productByNameFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
-            state.isLoading = false
-            state.error = ''
+            state.isLoadingProduct = false
+            state.errorProduct = ''
+            state.products = action.payload
+        },
+        productByCategoryFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
+            state.isLoadingProduct = false
+            state.errorProduct = ''
+            state.products = action.payload
+        },
+        productBySubcategoryFetchingSuccess(state, action: PayloadAction<IProduct[]>) {
+            state.isLoadingProduct = false
+            state.errorProduct = ''
             state.products = action.payload
         },
         productFetchingError(state, action: PayloadAction<string>) {
-            state.isLoading = false
-            state.error = action.payload
+            state.isLoadingProduct = false
+            state.errorProduct = action.payload
         }
     }
 })

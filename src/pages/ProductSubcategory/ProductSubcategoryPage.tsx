@@ -51,12 +51,10 @@ export const categoryes = [
 export const ProductSubcategoryPage: React.FC<Props> = () => {
 
   const params = useParams()
-  const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
 
-  // useEffect(() => {
-  //   dispatch(fetchProductsBySubategory(params.id as string))
-  // }, [])
+  useEffect(() => {
+   
+  }, [])
   
     return (
       <main>

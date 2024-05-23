@@ -25,7 +25,7 @@ export const Pagination: React.FC<Props> = ({...props}) => {
 
   return (
     <ul className="pagination">
-      <button disabled={props.currentPage[0] == 1} onClick={prevPage} className="page-link">Предыдущая</button>
+      {props.currentPage[0] != 1 && <button onClick={prevPage} className="page-link">Предыдущая</button>}
         {
           pageNumber.map(number => 
             <li key={number} className="page-item">
@@ -34,7 +34,7 @@ export const Pagination: React.FC<Props> = ({...props}) => {
               </a>
             </li>)
         }
-      <button disabled={props.currentPage[0] == pageNumber.length} onClick={nextPage} className="page-link">Следущая</button>
+      {props.currentPage[0] != pageNumber.length && <button onClick={nextPage} className="page-link">Следующая</button>}
     </ul>
   )
 }

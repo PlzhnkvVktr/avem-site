@@ -1,20 +1,20 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newsReducer from "./reducers/NewsReducer";
 import productReducer from "./reducers/ProductReducer";
-import productReducerByCategory from "./reducers/ProductByCategoryReducer";
-import productReducerBySubcategory from "./reducers/ProductBySubcategoryReducer";
 import productItemReducer from "./reducers/ProductItemReducer";
 import newsItemReducer from "./reducers/NewsItemReducer";
 import pageReducer from "./reducers/PagesReducer";
+import categoryReducer from "./reducers/CategoryReducer";
+import categoryItemReducer from "./reducers/CategoryItemReducer";
 
 const rootReducer = combineReducers({
     newsReducer,
     productReducer,
-    productReducerByCategory,
-    productReducerBySubcategory,
     productItemReducer,
     newsItemReducer,
-    pageReducer
+    pageReducer,
+    categoryReducer,
+    categoryItemReducer
 })
 
 export const setupStore = () => {

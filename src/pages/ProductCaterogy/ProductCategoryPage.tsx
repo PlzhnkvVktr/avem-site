@@ -10,49 +10,17 @@ import stand from "../../image/product/stand.jpg"
 import dcp from "../../image/product/dcp.jpg"
 import tranformation from "../../image/product/tranformation.jpg"
 import { fetchProductsBySubcategory } from "../../store/reducers/ActionCreators"
+import { ProductItem } from "../../components/ProductItem/ProductItem"
 
 type Props = {
     
 }
-export const categoryes = [
-    {
-      title: "ВЫСОКОВОЛЬТНЫЕ ИСПЫТАТЕЛЬНЫЕ УСТАНОВКИ (ВИУ)",
-      image: viu,
-      link: "/products/subcategory/1"
-    }, 
-    {
-      title: "НАГРУЗОЧНЫЕ УСТРОЙСТВА",
-      image: nag,
-      link: "/products/subcategory/2"
-    }, 
-    {
-      title: "ДИАГНОСТИКА ВРАЩАЮЩИХСЯ МАШИН",
-      image: dvm,
-      link: "/products/subcategory/3"
-    }, 
-    {
-      title: "КОМПЛЕКСНЫЙ СТЕНД ДЛЯ ПРОВЕРКИ ЭЛЕКТРИЧЕСКИХ МАШИН",
-      image: stand,
-      link: "/products/subcategory/4"
-    }, 
-    {
-      title: "ДИАГНОСТИКА КАБЕЛЬНОЙ ПРОДУКЦИИ",
-      image: dcp,
-      link: "/products/subcategory/5"
-    }, 
-    {
-      title: "ПРОВЕРКА ТРАНСФОРМАТОРОВ",
-      image: tranformation,
-      link: "/products/subcategory/6"
-    }
-  ]
-
 
 export const ProductCategoryPage: React.FC<Props> = () => {
 
   const params = useParams()
   const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducerBySubcategory)
+  const {products, isLoadingProduct, errorProduct} = useAppSelector(state => state.productReducer)
 
   useEffect(() => {
     dispatch(fetchProductsBySubcategory(params.id as string))
@@ -62,13 +30,11 @@ export const ProductCategoryPage: React.FC<Props> = () => {
       <main>
         <div className={s.product_container}>
           {products.map(
-            (item, key) => 
-            <div key={key} className={s.item_container}>
-                <Image src={item.card_img} thumbnail />
-              <div>
-                <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
-              </div>
-            </div>
+            (item, key) =>
+              <ProductItem
+                product={item}
+                key={key}
+              />
           )}
         </div>
       </main>

@@ -1,70 +1,40 @@
-import { useEffect, useLayoutEffect } from "react"
+import React, { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./ProductsListPage.module.css"
-import { fetchProductsByCategory } from "../../store/reducers/ActionCreators"
-import { Link, useParams } from "react-router-dom"
-import Col from "react-bootstrap/esm/Col"
-import Image from 'react-bootstrap/Image';
-import { Loader } from "../../components/Loader/Loader"
-import { Error } from "../../components/Error/Error"
-
+import {fetchCategoryById} from "../../store/reducers/ActionCreators"
+import { useParams } from "react-router-dom"
+import { SubcategoryItem} from "../../components/ProductItem/ProductItem"
 type Props = {
+
 }
 
 export const ProductsListPage: React.FC<Props> = () => {
 
   const params = useParams()
   const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducerByCategory)
+  const {category, isLoading, error} = useAppSelector(state => state.categoryItemReducer)
   
   useEffect(() => {
-    dispatch(fetchProductsByCategory(params.id as string))
+    dispatch(fetchCategoryById(params.id as string))
+    console.log(category.subcategories)
   }, [params.id])
 
-  if (isLoading) return <Loader />
-  if (error) return <Error error={error} />
+  // if (isLoadingProduct) return <Loader />
+  // if (errorProduct) return <Error error={errorProduct} />
   
-    return (
-      <main>
-        <div className={s.product_container}>
-          {
-            products.map(
-              (item, key) => 
-              <div key={key} className={s.item_container}>
-                  <Image src={item.card_img} thumbnail />
-                <div>
-                  <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
-                </div>
-              </div>
-            ) 
-          }
-        </div>
-      </main>
-    )
+  return (
+    <main>
+      <div className={s.product_container}>
+        {
+          category.subcategories.map(
+            (item, key) => 
+              <SubcategoryItem
+                  subcategory={item}
+                  key={key}
+              />
+          ) 
+        }
+      </div>
+    </main>
+  )
 }
-
-
-
-// {products.map(
-//   (item, key) => {
-//     if (params.id?.includes(".")) {
-//       return (
-//         <div key={key} className={s.item_container}>
-//             <Image src={item.card_img} thumbnail />
-//           <div>
-//             <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
-//           </div>
-//         </div>
-//       ) 
-//     } else {
-//       return (
-//         <div key={key} className={s.item_container}>
-//             <Image src={item.card_img} thumbnail />
-//           <div>
-//             <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
-//           </div>
-//         </div>
-//       ) 
-//     }
-//   }
-// )}

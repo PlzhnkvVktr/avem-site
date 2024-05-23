@@ -9,6 +9,8 @@ import Image from 'react-bootstrap/Image'
 import { Loader } from "../../components/Loader/Loader"
 import { Error } from "../../components/Error/Error"
 import { Pagination } from "../../components/common/Pagination/Pagination"
+import no_image from "../../image/product/no_image.png"
+import { ProductItem } from "../../components/ProductItem/ProductItem"
 
 type Props = {
     
@@ -17,7 +19,7 @@ type Props = {
 export const SearchPage: React.FC<Props> = () => {
   
   const dispatch = useAppDispatch()
-  const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+  const {products, isLoadingProduct, errorProduct} = useAppSelector(state => state.productReducer)
   const findProductName = useState("")
 
   const currentPage = useState(1)
@@ -38,7 +40,7 @@ export const SearchPage: React.FC<Props> = () => {
             <Col xs="auto">
               <Form.Control
                 type="text"
-                placeholder="Search"
+                placeholder="Найти продукт"
                 className=" mr-sm-2"
                 // value={findProductName[0]}
                 onChange={(value) => findProductName[1](value.target.value)}
@@ -53,12 +55,10 @@ export const SearchPage: React.FC<Props> = () => {
           {
             page.map(
               (item, key) => 
-              <div key={key} className={s.item_container}>
-                  <Image src={item.card_img} thumbnail />
-                <div>
-                  <h2><Link to={"/products/" + item.id}>{item.name}</Link></h2>
-                </div>
-              </div>
+              <ProductItem
+                product={item}
+                key={key}
+              />
             ) 
           }
         </div>
