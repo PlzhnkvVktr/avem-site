@@ -22,7 +22,7 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
                   <li><Link to={"/products/category/" + item.id}>{item.name}<span
                       className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
                     <ul className={s.submenu}>
-                      {item.subcategories.map((item, key) => <li key={key}><Link to={"/products/category/" + item.path}>{item.name}</Link></li>)}
+                      {item.subcategories.map((item, key) => <li key={key}><Link to={"/products/subcategory/" + item.path}>{item.name}</Link></li>)}
                     </ul>
                   </li>
               )

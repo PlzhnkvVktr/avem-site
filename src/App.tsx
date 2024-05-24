@@ -47,7 +47,7 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           {/*<Route path="/products_subcategory" element={<ProductSubcategoryPage />} />*/}
           <Route path="/products/subcategory/:id" element={<ProductCategoryPage />} />
-          <Route path="/selection" element={<EquipmentSelection />} />
+          <Route path="/selection" element={<EquipmentSelection categories={categories} />} />
           
           <Route path="/*" element={<NotFoundPage />} />
           {
