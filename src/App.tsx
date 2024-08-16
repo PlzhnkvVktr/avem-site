@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <Header categories={categories} pages={pages} />
       <>
-        <Routes>EquipmentSelection
+        <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/news" element={<NewsPage />} />

@@ -65,3 +65,7 @@
   top: -1px;
   transition: .3s linear;
 }
+
+@media (max-width: 1200px) {
+  
+}

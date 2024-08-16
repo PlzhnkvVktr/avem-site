@@ -25,6 +25,9 @@
     margin: 1%;
     text-align: left;
     width: 200px;
+    button {
+        display: none;
+    }
     span {
         font-size: 20px;
         color: #909090;
@@ -43,3 +46,36 @@
     } */
 }
 
+
+
+@media (max-width: 1050px) {
+    
+}
+
+
+@media (max-width: 600px) {
+    .logo {
+        margin-top: 25px;
+        width: 150px;
+    }
+    .servis_menu {
+        display: none;
+    }
+    .contact_menu {
+        font-size: 12px;
+        margin-top: 20px;
+        
+    }
+
+    .humburger_button_container {
+        display: flex;
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin-top: 10px;
+            border: none;
+            background: inherit;
+        }
+    }
+}

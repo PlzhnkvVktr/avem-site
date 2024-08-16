@@ -37,12 +37,38 @@ export const Header: React.FC<Props> = ({categories, pages}) => {
             <Navbar pages={pages} categories={categories} />
           </div>
           <div className={s.contact_menu}>
+            {/* <button className={s.humburger_button}>&#9776;</button> */}
             <span>Покупателям</span>
             <p><a href="tel:+780025655225">8-800-256-552-25</a></p>
             <span>Поставщикам</span>
             <p><a href="tel:+780025655225">8-800-256-552-25</a></p>
             <a href="mailto:sales@avem.ru">sales@avem.ru</a>
           </div>
+          {/* <div className={s.humburger_button_container}>
+            <button className={s.humburger_button}>&#9776;</button>
+          </div> */}
+
+        <div className="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label className="menu__btn" htmlFor="menu__toggle">
+            <span></span>
+          </label>
+
+        <ul className="menu__box">
+            {
+              categories.map((item, key) =>
+                  <li key={key}><Link className="menu__item" to={"/products/category/" + item.id}>{item.name}</Link></li>
+              )
+            }
+            <hr></hr>
+            {pages.map((item, key) => {
+              if (item.isVisibility && item.isNavbar) {
+                return (<li key={key}><Link to={item.path} className="menu__item">{item.name}</Link></li>)
+              }
+            }
+            )}
+        </ul>
+      </div>
         </div>
       </header>
     )
