@@ -28,8 +28,8 @@ export const Pagination: React.FC<Props> = ({...props}) => {
       {props.currentPage[0] != 1 && <button onClick={prevPage} className="page-link">Предыдущая</button>}
         {
           pageNumber.map(number => 
-            <li key={number} className="page-item">
-              <a className="page-link" onClick={() => paginate(number)}>
+            <li key={number}>
+              <a className={(props.currentPage[0] == number) ? "page-link page-link-active" : "page-link"} onClick={() => paginate(number)}>
                 {number}
               </a>
             </li>)

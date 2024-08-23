@@ -32,7 +32,7 @@ export const AboutCompany: React.FC<Props> = () => {
             приборы имеют декларации Таможенного союза.
           </p>
           <Link to={'/about'} className={s.all_news_link}>Читать далее</Link>
-        <img src="https://keromag.ru/upload/iblock/e20/5ywwm4fvdw2n9d4mf8fu6xa9waci1z2h/43.jpg" alt=""  />
+        <img src="https://sgm.by/slider/build/1.jpg" alt=""  />
         </div>
         <div className={s.news_container}>
           <h2>НОВОСТИ</h2>

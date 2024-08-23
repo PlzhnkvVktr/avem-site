@@ -9,7 +9,7 @@
     flex-direction: column;
     width: 33%;
     text-align: left;
-    margin-top: 77px;
+    margin-top: 5%;
     a {
       text-decoration: none;
       color:  #A1A1A1;
@@ -20,7 +20,7 @@
   }
   a:hover {
     transform: scale(1.2);
-    margin-left: 40px;
+    margin-left: 30px;
   }
 }
 .categories_container {
@@ -38,7 +38,7 @@
     }
     a:hover {
       transform: scale(1.2);
-      margin-left: 40px;
+      margin-left: 30px;
     }
 }
 .contacts_container {
@@ -80,6 +80,7 @@
   .contacts_container {
     width: 30%;
   }
+  
 }
 
 @media (max-width: 768px) { 
@@ -97,5 +98,17 @@
   }
   .link_container { 
     width: 100%;
+
+    a {
+      font-size: 18px;
+    }
+  }
+  .section_container {
+    margin-top: 12%;
+
+    a:hover {
+      transform: scale(1.2);
+      margin-left: 10px;
+    }
   }
 }

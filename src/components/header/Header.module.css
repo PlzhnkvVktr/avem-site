@@ -48,8 +48,12 @@
 
 
 
-@media (max-width: 1050px) {
-    
+@media (max-width: 1200px) {
+    .contact_menu {
+        font-size: 14px;
+        margin-top: 20px;
+        
+    }
 }
 
 

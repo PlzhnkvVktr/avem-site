@@ -6,7 +6,7 @@
 .questionItem {
     width: 100%;
     border: 1px solid black;
-    margin: 20px;
+    margin-bottom: 20px;
 
     h3 {
         text-align: center;

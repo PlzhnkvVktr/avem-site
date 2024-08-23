@@ -15,7 +15,7 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
     return (
       <nav className={s.navbar}>
       <ul className={s.topmenu}>
-        <li><Link to="" className={s.active}>ПРОДУКЦИЯ<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+        <li><Link to="/#" className={s.active}>ПРОДУКЦИЯ<span className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
           <ul className={s.submenu}>
             {
               categories.map((item, key) =>
@@ -31,7 +31,6 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
         </li>
         <li><Link to="">ПРОЕКТЫ</Link></li>
         <li><Link to="/search">НАЙТИ</Link></li>
-        <li><Link to="">ДОКУМЕНТАЦИЯ</Link></li>
         <li><Link to="/selection">ПОДБОР ОБОРУДОВАНИЯ</Link></li>
         <li><Link to="">О КОМПАНИИ</Link>
           <ul className={s.submenu}>

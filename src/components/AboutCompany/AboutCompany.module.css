@@ -19,6 +19,7 @@
     a {
       text-decoration: none;
       color: black;
+      hyphens: auto;
     }
 }
 .info_container {
@@ -80,4 +81,35 @@
 .all_news_link {
   font-size: 20px;
   font-style: italic;
+}
+
+@media (max-width: 600px) { 
+  .about_container {
+    flex-direction: column;
+    height: auto;
+
+    img {
+      display: none;
+    }
+    .info_container {
+      width: 100%;
+      padding: 10px;
+
+      h1 {
+        text-indent: 0px;
+        font-size: 26px;
+        text-align: center;
+      }
+
+      p {
+        text-indent: 25px;
+        font-size: 18px;
+        line-height: 30px;
+        hyphens: auto;
+      }
+    }
+  }
+  .news_container {
+    width: auto;
+  }
 }

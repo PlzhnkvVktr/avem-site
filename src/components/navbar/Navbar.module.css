@@ -67,5 +67,7 @@
 }
 
 @media (max-width: 1200px) {
-  
+  .topmenu > li > a {
+    font-size: 12px;
+  }
 }

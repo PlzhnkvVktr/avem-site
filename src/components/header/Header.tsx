@@ -55,6 +55,8 @@ export const Header: React.FC<Props> = ({categories, pages}) => {
           </label>
 
         <ul className="menu__box">
+            <li><Link className="menu__item" to="/selection">ПОДБОР ОБОРУДОВАНИЯ</Link></li>
+            <li><Link className="menu__item" to="/search">НАЙТИ</Link></li>
             {
               categories.map((item, key) =>
                   <li key={key}><Link className="menu__item" to={"/products/category/" + item.id}>{item.name}</Link></li>
