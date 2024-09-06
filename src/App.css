@@ -14,9 +14,16 @@ body {
   min-height: 100vh;
   font: inherit;
   vertical-align: baseline;
-  background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg?w=1380&t=st=1715160031~exp=1715160631~hmac=7e0763214490650224240af5f38fa9a3db3f57354e357fc6e87483db3aa3d25d");
-  /* background-size: cover; */
+
   /* background-clip: border-box; */
+
+
+  #root {
+    background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg?w=1380&t=st=1715160031~exp=1715160631~hmac=7e0763214490650224240af5f38fa9a3db3f57354e357fc6e87483db3aa3d25d");
+  
+    background-repeat: round;
+    background-size: 100% 100%;
+  }
 
   .nav-link {
     color: black;
@@ -219,6 +226,17 @@ footer {
   background-color: #CFD8DC;
 }
 
+.tab-content {
+  div {
+    * {
+      background-color: transparent !important;
+      div {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
 .item_container {
   margin-top: 50px;
   padding: 5px;
@@ -235,7 +253,8 @@ footer {
       height: 200px;
   }
   div {
-      width: 70%;
+      /* margin-left: 15px; */
+      width: 60%;
       /* text-align: start; */
       /* vertical-align: middle; */
       display: flex;

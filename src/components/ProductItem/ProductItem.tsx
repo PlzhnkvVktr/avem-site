@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import no_image from "../../image/product/no_image.png"
 import React from "react";
 import {ISubcategory} from "../../models/ISubcategory";
+import { API_URL } from '../../const/const';
 
 type PropsProductItem = {
     product: IProduct
@@ -18,7 +19,7 @@ type PropsSubcategoryItem = {
 export const ProductItem: React.FC<PropsProductItem> = ({product, key}) => {
     return (
         <div key={key} className="item_container">
-            <Image src={(!product.card_img) ? no_image : product.card_img} thumbnail />
+            <Image src={(!product.card_img) ? no_image : API_URL + product.card_img} thumbnail />
           <div>
             <h2><Link to={"/products/" + product.id}>{product.name}</Link></h2>
           </div>
