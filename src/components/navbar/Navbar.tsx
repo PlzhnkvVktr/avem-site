@@ -29,7 +29,7 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
             }
           </ul>
         </li>
-        <li><Link to="">ПРОЕКТЫ</Link></li>
+        {/* <li><Link to="">ПРОЕКТЫ</Link></li> */}
         <li><Link to="/search">НАЙТИ</Link></li>
         <li><Link to="/selection">ПОДБОР ОБОРУДОВАНИЯ</Link></li>
         <li><Link to="">О КОМПАНИИ</Link>

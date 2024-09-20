@@ -39,7 +39,7 @@ function App() {
       <Header categories={categories} pages={pages} />
       <>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<MainPage categories={categories} />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
@@ -57,7 +57,7 @@ function App() {
           }
         </Routes>
       </>
-      <Footer />
+      <Footer categories={categories} pages={pages} />
     </div>
   );
 }

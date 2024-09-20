@@ -1,16 +1,17 @@
 import { AboutCompany } from "../components/AboutCompany/AboutCompany"
 import { ProductLinks } from "../components/ProductsLinks/ProductLinks"
 import { Carousel } from "../components/Slider/Slider"
+import { ICategory } from "../models/ICategory"
 
 type Props = {
-    
+  categories: ICategory[]
 }
 
-export const MainPage: React.FC<Props> = () => {
+export const MainPage: React.FC<Props> = ({categories}) => {
   
     return (
       <main>
-        <ProductLinks />
+        <ProductLinks categories={categories} />
         <Carousel />
         <AboutCompany />
       </main>

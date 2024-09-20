@@ -100,6 +100,10 @@ footer {
 .page_container {
   width: 70%;
   margin: 50px auto;
+
+  * {
+    background: transparent !important;
+  }
 }
 
 .search_panel {
@@ -267,8 +271,12 @@ footer {
 }
 
 @media (max-width: 600px) { 
+  
   main {
     width: 95%;
+  }
+  header {
+    height: 200px !important;
   }
   .menu__btn {
     display: inline;

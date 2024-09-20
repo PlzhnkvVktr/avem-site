@@ -2,6 +2,11 @@
     margin: 0 auto;
     padding: 2%;
     width: 80%;
+
+    iframe {
+        display: flex;
+        margin: 0 auto;
+    }
     
 }
 .item_container {
@@ -26,5 +31,19 @@
     a {
         text-decoration: none;
         color: black;
+    }
+}
+
+@media (max-width: 600px) { 
+    .product_container {
+        margin: 0 auto;
+        padding: 2%;
+        width: 90%;
+    
+        iframe {
+            width: 90%;
+            display: flex;
+            margin: 0 auto;
+        }
     }
 }

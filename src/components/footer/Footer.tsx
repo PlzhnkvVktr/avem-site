@@ -4,34 +4,46 @@ import vk from "../../image/vk.png"
 import instagram from "../../image/instagram.png"
 import telegram from "../../image/telegram1.png"
 import youtobe from "../../image/youtube.png"
+import { ICategory } from "../../models/ICategory"
+import { IPage } from "../../models/IPage"
 
 type Props = {
-    
+  pages: IPage[]
+  categories: ICategory[]
 }
 
-export const Footer: React.FC<Props> = () => {
+export const Footer: React.FC<Props> = ({pages, categories}) => {
   
     return (
       <footer>
         <div className={s.link_container}>
           <div className={s.section_container}>
-            <Link to={'/'}>Продукция</Link>
-            <Link to={'/'}>Проекты</Link>
-            <Link to={'/'}>Услуги</Link>
-            <Link to={'/'}>Документация</Link>
-            <Link to={'/'}>Сервис и гарантии</Link>
-            <Link to={'/'}>Подбор оборудования</Link>
+            {pages.map((item, key) => {
+                if (item.isVisibility) {
+                  return (<Link to={item.path}>{item.name}</Link>)
+                }
+              })
+            }
+            {/* <Link to={'/products'}>Продукция</Link> */}
+            {/* <Link to={'/'}>Проекты</Link> */}
+            {/* <Link to={'/'}>Документация</Link> */}
+            {/* <Link to={'/'}>Сервис и гарантии</Link> */}
+            <Link to={'/selection'}>Подбор оборудования</Link>
+            <Link to={'/search'}>Найти</Link>
           </div>
           <div className={s.categories_container}>
             <h2>ПРОДУКЦИЯ</h2>
-            <Link to={'/'}>Испытания электродвигателей</Link>
+            {
+              categories.map((item, key) => <Link key={key} to={"/products/category/" + item.id}>{item.name}</Link>)
+            }
+            {/* <Link to={'/'}>Испытания электродвигателей</Link>
             <Link to={'/'}>Испытания машин постоянного тока</Link>
             <Link to={'/'}>Испытания трансформаторов</Link>
             <Link to={'/'}>Высоковольтные установки</Link>
             <Link to={'/'}>Нагрузочные модули</Link>
             <Link to={'/'}>Лаборатории проверки средств защиты</Link>
             <Link to={'/'}>Приборы</Link>
-            <Link to={'/'}>Прочее оборудование</Link>
+            <Link to={'/'}>Прочее оборудование</Link> */}
           </div>
           <div className={s.contacts_container}>
             <h2>КОНТАКТЫ</h2>
