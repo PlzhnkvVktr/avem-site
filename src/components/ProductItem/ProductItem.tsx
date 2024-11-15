@@ -21,7 +21,8 @@ export const ProductItem: React.FC<PropsProductItem> = ({product, key}) => {
         <div key={key} className="item_container">
             <Image src={(!product.card_img) ? no_image : API_URL + product.card_img} thumbnail />
           <div>
-            <h2><Link to={"/products/" + product.id}>{product.name}</Link></h2>
+            <h3><Link to={"/products/" + product.id}>{product.name}</Link></h3>
+            <p>{product.card_description}</p>
           </div>
         </div>
     )

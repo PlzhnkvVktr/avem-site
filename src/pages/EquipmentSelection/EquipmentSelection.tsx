@@ -12,41 +12,62 @@ export const EquipmentSelection: React.FC<Props> = ({categories}) => {
 
     const dispatch = useAppDispatch()
     const {products, isLoadingProduct, errorProduct} = useAppSelector(state => state.productReducer)
-    const stage1 = useState("")
-    const stage2 = useState("")
-    const stage3 = useState("")
+    const [stage1, setStage1] = useState("")
+    const [stage2, setStage2] = useState("")
+    const [stage3, setStage3] = useState("")
+    const [showSelection, setShowSelection] = useState(true); // Состояние видимости блока
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => {
+        setShowSelection(!showSelection)
+        setIsOpen(!isOpen);
+      };
 
     useEffect(() => {
-        dispatch(fetchProductsBySubcategory(stage2[0]))
-    }, [stage2[0]])
+        dispatch(fetchProductsBySubcategory(stage2))
+    }, [stage2])
 
     useEffect(() => {
-        stage2[1]("")
-        stage3[1]("")
-    }, [stage1[0]])
+        setStage2("")
+        setStage3("")
+    }, [stage1])
 
     return (
         <main>
             <h2 className={s.title}>Подбор оборудования</h2>
-            <div className={s.questionItem}>
-                <h3>Тип продукции</h3>
-                <form>
-                    {categories.map((item, key) =>
-                        <label key={key}>
-                            <input type="radio" name="radio" value={key} onChange={(e) => stage1[1](e.target.value)} />
-                            <span>{item.name}</span>
-                        </label>
-                    )}
-                </form>
+            <div className={s.filterButton}>
+                <div className={s.titleFilter}>
+                    Фильтр
+                </div>
+                <div className={`${s.arrow} ${isOpen ? s.open : ''}`} onClick={handleClick}>
+                  <span className={s.arrowLeft}></span>
+                  <span className={s.arrowRight}></span>
+                </div>
             </div>
+            {showSelection && ( // Условное рендеринг блока
+                <div className={s.questionItem}>
+                    <h3>Тип продукции</h3>
+                    <form>
+                        {categories.map((item, key) =>
+                            <label key={key}>
+                                <input type="radio" name="radio" value={key} onChange={(e) => setStage1(e.target.value)} />
+                                <span>{item.name}</span>
+                            </label>
+                        )}
+                    </form>
+                    {(stage1 && categories[Number(stage1)].subcategories.length > 0) &&
+                        <StageItem name={"Тип продукции 2"} array={categories[Number(stage1)].subcategories} stage={[stage2, setStage2]} />
+                    }
+                    {(stage2 && products.length > 0) &&
+                        <StageItem name={"Продукция"} array={products} stage={[stage3, setStage3]} />
+                    }
+                    
+                    <div className={s.submitButtonContainer}>
+                        <button className={s.submitButton} onClick={handleClick}>Показать</button>
+                    </div>
 
-            {/*<StageItem name={"Тип продукции 1"} array={categories} stage={stage1} />*/}
-            {(stage1[0] && categories[Number(stage1[0])].subcategories.length > 0) &&
-                <StageItem name={"Тип продукции 2"} array={categories[Number(stage1[0])].subcategories} stage={stage2} />
-            }
-            {(stage2[0] && products.length > 0) &&
-                <StageItem name={"Продукция"} array={products} stage={stage3} />
-            }
+                </div>
+            )}
         </main>
     )
 }
@@ -60,7 +81,7 @@ type Props1 = {
 export const StageItem: React.FC<Props1> = (props) => {
 
     return (
-        <div className={s.questionItem}>
+        <div className={s.questionSecondaryItems}>
             <h3>{props.name}</h3>
             <form>
                 {props.array.map((item, key) =>

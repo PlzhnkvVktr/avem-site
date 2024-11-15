@@ -19,8 +19,10 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
           <ul className={s.submenu}>
             {
               categories.map((item, key) =>
-                  <li><Link to={"/products/category/" + item.id}>{item.name}<span
-                      className={`${s.fa} ${s.fa_angle_down}`}></span></Link>
+                  <li>
+                    <Link to={"/products/category/" + item.id}>
+                      {item.name} <span className={`${s.fa} ${s.fa_angle_down}`}></span>
+                    </Link>
                     <ul className={s.submenu}>
                       {item.subcategories.map((item, key) => <li key={key}><Link to={"/products/subcategory/" + item.path}>{item.name}</Link></li>)}
                     </ul>
@@ -29,18 +31,25 @@ export const Navbar: React.FC<Props> = ({pages, categories}) => {
             }
           </ul>
         </li>
-        {/* <li><Link to="">ПРОЕКТЫ</Link></li> */}
         <li><Link to="/search">НАЙТИ</Link></li>
         <li><Link to="/selection">ПОДБОР ОБОРУДОВАНИЯ</Link></li>
         <li><Link to="">О КОМПАНИИ</Link>
-          <ul className={s.submenu}>
+          {/* <ul className={s.submenu}>
             {pages.map((item, key) => {
                 if (item.isVisibility && !item.isNavbar) {
                   return (<li><Link to={item.path} key={key} className={s.links}>{item.name}</Link></li>)
                 }
               })
             }
+          </ul> */}
+          <ul className={s.submenu}>
+            <li><Link to={""} className="dialog-content">Компания такая-то</Link></li>
+            <li><Link to={""} className="dialog-content">Компания такая-то вот такая крч</Link></li>
+            <li><Link to={""} className="dialog-content">Компания такая-то</Link></li>
+            
+            <div className="dialog-arrow"></div>
           </ul>
+          
         </li>
       </ul>
     </nav>

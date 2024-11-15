@@ -9,6 +9,10 @@
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px 20px;
 
+    .searchButton {
+        background-color: #829dae;
+    }
+
     img {
         width: 200px;
         height: 200px;

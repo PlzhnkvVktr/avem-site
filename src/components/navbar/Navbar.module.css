@@ -38,7 +38,7 @@
   /* margin-left: 5px; */
   color: inherit;
 }
-.submenu {
+/* .submenu {
   position: absolute;
   z-index: 5;
   min-width: 300px;
@@ -63,6 +63,38 @@
   position: absolute;
   left: 100%;
   top: -1px;
+  transition: .3s linear;
+} */
+
+.submenu {
+  position: absolute;
+  z-index: 5;
+  min-width: 200px; /* уменьшить ширину */
+  background: white;
+  border-top: 1px solid #CBCBCC;
+  border-left: 1px solid #CBCBCC;
+  border-right: 1px solid #CBCBCC;
+  visibility: hidden;
+  opacity: 0; 
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition: .3s linear;  
+  top: 40px; /* добавить отступ сверху */
+  left: 0; /* добавить отступ слева */
+}
+
+.submenu li a {
+  color: #282828;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #CBCBCC;
+  white-space: nowrap; /* добавить, чтобы текст не переносился */
+}
+
+.submenu .submenu {
+  position: absolute;
+  left: 100%;
+  top: 0; /* изменить на 0 */
   transition: .3s linear;
 }
 

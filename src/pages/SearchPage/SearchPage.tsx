@@ -47,7 +47,7 @@ export const SearchPage: React.FC<Props> = () => {
               />
             </Col>
             <Col xs="auto">
-              <Button type="button" onClick={() => dispatch(fetchProductsByName(findProductName[0]))}>Найти</Button>
+              <Button type="button" className={s.searchButton} onClick={() => dispatch(fetchProductsByName(findProductName[0]))}>Найти</Button>
             </Col>
           </Row>
         </Form>

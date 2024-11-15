@@ -122,9 +122,15 @@ footer {
     }
 
     button {
+      background-color: #829dae;
+      border: none;
       height: 50px;
       width: 120%;
       font-size: 24px;
+    }
+
+    button:active {
+      background-color: #53616c;
     }
   }
 }
@@ -262,7 +268,8 @@ footer {
       /* text-align: start; */
       /* vertical-align: middle; */
       display: flex;
-      align-items: center
+      /* align-items: center */
+      flex-direction: column;
   }
   a {
       text-decoration: none;
@@ -399,3 +406,28 @@ footer {
     }
   }
 }
+
+
+.dialog {
+  position: relative;
+  margin: 20px;
+  width: 100%;
+}
+
+.dialog-content {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.dialog-arrow {
+  position: absolute;
+  top: -10px; /* Стрелка сверху */
+  left: 70%;
+  transform: translateX(-50%);
+  border-bottom: 10px solid #f0f0f0; /* Направление стрелки вниз */
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+

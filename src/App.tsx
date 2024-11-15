@@ -44,7 +44,7 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsItemPage />} />
           <Route path="/products/category/:id" element={<ProductsListPage />} />
-          <Route path="/products/:id" element={<ProductPage />} />
+          <Route path="/products/:id" element={<ProductPage categories={categories} />} />
           {/*<Route path="/products_subcategory" element={<ProductSubcategoryPage />} />*/}
           <Route path="/products/subcategory/:id" element={<ProductCategoryPage />} />
           <Route path="/selection" element={<EquipmentSelection categories={categories} />} />
