@@ -247,6 +247,27 @@ footer {
   }
 }
 
+.accordion {
+  background: transparent;
+
+  .accordion-item {
+    background: transparent;
+
+    .accordion-header {
+      background: transparent;
+
+      button {
+        background: transparent;
+      }
+    }
+
+    .accordion-collapse {
+      background: transparent;
+    }
+  }
+}
+
+
 .item_container {
   margin-top: 50px;
   padding: 5px;

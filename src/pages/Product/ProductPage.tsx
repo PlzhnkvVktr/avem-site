@@ -1,9 +1,9 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import s from "./ProductPage.module.css"
 import { fetchProductItem, fetchProductsByCategory } from "../../store/reducers/ActionCreators"
 import { Link, useParams } from "react-router-dom"
-import { Tab, Tabs } from "react-bootstrap"
+import { Accordion, Tab, Tabs } from "react-bootstrap"
 import { Loader } from "../../components/Loader/Loader"
 import { Error } from "../../components/Error/Error"
 import { IProduct } from "../../models/IProduct"
@@ -66,21 +66,35 @@ export const ProductPage: React.FC<PropsProductPage> = ({categories}) => {
     )
 }
 
-export const ProductPageTitle: React.FC<PropsTitle> = ({product}) => {
+export const ProductPageTitle: React.FC<PropsTitle> = ({ product }) => {
+  const [scale, setScale] = useState(1);
 
+  const handleZoomIn = () => {
+    setScale(2);
+  };
+
+  const handleZoomOut = () => {
+    // setScale(Math.max(scale / 1.25, 1));
+    setScale(1)
+  };
 
   return (
-    
     <div className={s.product_title_container}>
-      <div className={s.product_title_container_image}>
+      <div
+        className={s.product_title_container_image}
+        style={{ transform: `scale(${scale})` }}
+        // onClick={handleZoomIn}
+      >
         <img src={API_URL + product.card_img} />
+        <button onClick={handleZoomIn}>+</button>
       </div>
       <div className={s.product_title_container_description}>
         <p>{product.card_description}</p>
       </div>
     </div>
-  )
-}
+  );
+};
+
 
 export const ProductPageNavigation: React.FC<PropsProductPageNavigation> = ({categories}) => {
 
@@ -88,7 +102,27 @@ export const ProductPageNavigation: React.FC<PropsProductPageNavigation> = ({cat
   return (
     
     <div className={s.product_navigation_container}>
-      {categories.map(item => <p>{item.name}</p>)}
+      <Accordion defaultActiveKey="0" flush>
+        {
+          categories.map((item, key) => 
+          // <p>{item.name}</p>
+          <Accordion.Item key={key} eventKey={item.id} >
+            <Accordion.Header>{item.name}</Accordion.Header>
+              <Accordion.Body>
+                <Accordion defaultActiveKey="0" flush>
+                   {
+                    item.subcategories.map(itemSub =>
+                      <div>
+                        <Link to={"/products/subcategory/" + itemSub.path}>{itemSub.name}</Link>
+                      </div>
+                    )
+                  }
+                </Accordion>
+              </Accordion.Body>
+          </Accordion.Item>
+          )
+        }
+      </Accordion>
     </div>
   )
 }
